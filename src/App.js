@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from './logo.png';
+import './App.scss';
 
 function App() {
   return (
     <body className="Vrnas">
-      <header className="Vrnas-header">
-        <img src={logo} alt="Vrnas-logo" />
-        <nav>
+      <header className="header">
+        <img src={logo} alt="header-logo"/>
+        <nav className='header__nav'>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a className='header__link' href="#">Home</a></li>
+            <li><a className='header__link' href="#">About us</a></li>
+            <li><a className='header__link' href="#">Service</a></li>
+            <li><a className='header__link' href="#">Page</a></li>
+            <li><a className='header__link' href="#">Blog</a></li>
           </ul>
+          <button className='header__button'>Contanct us</button>
         </nav>
       </header>
       <main>
-        <h2>Welcome to VRNAS</h2>
+        <h2>Welcome to VRNas</h2>
         <p>VRNAS is a platform for creating and sharing VR experiences.</p>
       </main>
       <footer>
-        <p>Copyright 2025 VRNAS</p>
+        <p>Copyright 2025 VRNas</p>
       </footer>
     </body>
   );

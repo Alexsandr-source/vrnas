@@ -1,0 +1,32 @@
+:root {
+  --dark-color: #181818;
+  --purple-color: #CA6AEB;
+  --blue-color: #19B5F1;
+}
+
+.Vrnas {
+  background-color: var(--dark-color);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__nav {
+    display: flex;
+    & ul {
+      display: flex;
+      list-style: none;
+    }
+  }
+  &__link {
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+  &__button {
+    border-radius: 12px;
+    border: 2px solid transparent;
+    border-image: linear-gradient(to right, var(--purple-color), var(--blue-color)) 1;
+    background-color: var(--dark-color);
+  }
+}
