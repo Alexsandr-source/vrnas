@@ -3,9 +3,9 @@ import './App.scss';
 
 function App() {
   return (
-    <body className="Vrnas">
+    <body>
       <header className="header">
-        <img src={logo} alt="header-logo"/>
+        <img src={logo} alt="header__logo"/>
         <nav className='header__nav'>
           <ul>
             <li><a className='header__link' href="#">Home</a></li>
@@ -14,8 +14,8 @@ function App() {
             <li><a className='header__link' href="#">Page</a></li>
             <li><a className='header__link' href="#">Blog</a></li>
           </ul>
-          <button className='header__button'>Contanct us</button>
         </nav>
+        <button className='header__button'>Contanct us</button>
       </header>
       <main>
         <h2>Welcome to VRNas</h2>

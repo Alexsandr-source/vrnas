@@ -1,32 +1,51 @@
 :root {
-  --dark-color: #181818;
-  --purple-color: #CA6AEB;
+  --linear-color: linear-gradient(to right, var(--blue-color), var(--purple10-color)) 1;
+  --purple10-color: #CA6AEB;
   --blue-color: #19B5F1;
+  --black100-color: #181818;
+  --black50-color: #252532;
+  --grey1-color: #B0B0B2;
+  --grey2-color: #D1D1D1;
+  --white-color: #FFFFFF;
 }
 
-.Vrnas {
-  background-color: var(--dark-color);
+@font-face {
+  font-family: 'ChakraPetch';
+  src: local('ChakraPetch'), url('./fonts/MyFont.woff') format('woff');
+}
+
+body {
+  font-family: 'ChakraPetch', sans-serif;
+  display: flex;
+  background-color: var(--black50-color);
 }
 
 .header {
-  display: flex;
+  display: grid;
   align-items: center;
-  justify-content: center;
+  justify-items: center;
+  grid-template-columns: 33.33vw 33.33vw 33.33vw;
   &__nav {
     display: flex;
+    align-items: center;
     & ul {
       display: flex;
+      gap: 1rem;
       list-style: none;
     }
+  }
+  &__logo{
   }
   &__link {
     color: #FFFFFF;
     text-decoration: none;
   }
   &__button {
+    padding: 12px 24px;
+    color: var(--white-color);
     border-radius: 12px;
     border: 2px solid transparent;
-    border-image: linear-gradient(to right, var(--purple-color), var(--blue-color)) 1;
+    border-image: var(--linear-color);
     background-color: var(--dark-color);
   }
 }
