@@ -4,6 +4,7 @@ import './App.scss';
 function App() {
   return (
     <body>
+      
       <header className="header">
         <img src={logo} alt="header__logo"/>
         <nav className='header__nav'>

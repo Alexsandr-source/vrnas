@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap');
+
 :root {
   --linear-color: linear-gradient(to right, var(--blue-color), var(--purple10-color)) 1;
   --purple10-color: #CA6AEB;
@@ -7,17 +9,15 @@
   --grey1-color: #B0B0B2;
   --grey2-color: #D1D1D1;
   --white-color: #FFFFFF;
-}
-
-@font-face {
-  font-family: 'ChakraPetch';
-  src: local('ChakraPetch'), url('./fonts/MyFont.woff') format('woff');
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-bold: 700;  
 }
 
 body {
-  font-family: 'ChakraPetch', sans-serif;
   display: flex;
-  background-color: var(--black50-color);
+  background-color: var(--black100-color);
 }
 
 .header {
@@ -37,10 +37,21 @@ body {
   &__logo{
   }
   &__link {
+    font-family: "ChackraPeth", sans-serif;
+    font-weight: var(--weight-light);
+    font-size: 16px;
     color: #FFFFFF;
     text-decoration: none;
+    &:hover {
+      font-weight: var(--weight-medium);
+    }
   }
+  
   &__button {
+    font-family: "ChackraPeth", sans-serif;
+    font-weight: light;
+    font-size: 16px;
+    line-height: 28px;
     padding: 12px 24px;
     color: var(--white-color);
     border-radius: 12px;
