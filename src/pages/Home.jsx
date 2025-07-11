@@ -1,32 +1,26 @@
-import logo from './logo.png';
-import './App.scss';
+import logo from '../img/logo.png';
+import wave from '../img/wave.png';
+import '../assets/Home.scss'
 
-function App() {
+function Home() {
   return (
-    <body>
-      
-      <header className="header">
+    <>
+        <img src={wave} className="wave-bg"/>
+        <header className="header">
         <img src={logo} alt="header__logo"/>
         <nav className='header__nav'>
-          <ul>
+            <ul>
             <li><a className='header__link' href="#">Home</a></li>
             <li><a className='header__link' href="#">About us</a></li>
             <li><a className='header__link' href="#">Service</a></li>
             <li><a className='header__link' href="#">Page</a></li>
             <li><a className='header__link' href="#">Blog</a></li>
-          </ul>
+            </ul>
         </nav>
         <button className='header__button'>Contanct us</button>
-      </header>
-      <main>
-        <h2>Welcome to VRNas</h2>
-        <p>VRNAS is a platform for creating and sharing VR experiences.</p>
-      </main>
-      <footer>
-        <p>Copyright 2025 VRNas</p>
-      </footer>
-    </body>
+        </header>
+    </>
   );
 }
 
-export default App;
+export default Home;
