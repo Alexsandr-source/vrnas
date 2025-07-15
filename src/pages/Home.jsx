@@ -1,6 +1,6 @@
-import logo from '../img/logo.png';
-import wave from '../img/wave.png';
-import '../assets/Home.scss'
+import logo from '../assets/img/logo.png';
+import wave from '../assets/img/wave.png';
+import '../assets/scss/ContactUs.scss'
 
 function Home() {
   return (
@@ -19,6 +19,12 @@ function Home() {
         </nav>
         <button className='header__button'>Contanct us</button>
         </header>
+        <main>
+
+        </main>
+        <footer>
+          
+        </footer>
     </>
   );
 }
