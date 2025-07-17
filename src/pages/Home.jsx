@@ -12,10 +12,10 @@ function Home() {
           <nav className='header__nav'>
               <ul>
                 <li><Link to='/' className='header__link'>Home</Link></li>
-                <li><a className='header__link' href="#">About us</a></li>
-                <li><a className='header__link' href="#">Service</a></li>
-                <li><a className='header__link' href="#">Page</a></li>
-                <li><a className='header__link' href="#">Blog</a></li>
+                <li><Link to='/' className='header__link'>About us</Link></li>
+                <li><Link to='/' className='header__link'>Service</Link></li>
+                <li><Link to='/' className='header__link'>Page</Link></li>
+                <li><Link to='/' className='header__link'>Blog</Link></li>
               </ul>
           </nav>
           <Link to='/contact-us' className='header__button'>Contanct us</Link>
