@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;700&display=swap');
+
+:root {
+  --linear-color: linear-gradient(to right, var(--blue-color), var(--purple10-color)) 1;
+  --purple10-color: #CA6AEB;
+  --blue-color: #19B5F1;
+  --black100-color: #181818;
+  --black50-color: #252532;
+  --grey1-color: #B0B0B2;
+  --grey2-color: #D1D1D1;
+  --white-color: #FFFFFF;
+}
+
+.wave-bg {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.header {
+    width: 100vw;
+    margin-top: 25px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    &__nav {
+        padding: 0px 0px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        justify-items: center;
+        list-style: none;
+    }
+    &__link {
+        font-family: Chakra Petch;
+        font-weight: 300;
+        font-style: Light;
+        font-size: 16px;
+        line-height: 28px;
+        letter-spacing: 0%;
+
+        color: var(--white-color);
+        text-decoration: none;
+        transition: .2s;
+        &:hover {
+        font-size: 17px;
+        font-weight: 500;
+        }
+  }
+  
+  &__button {
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0;
+
+    padding: 12px 24px;
+    color: var(--white-color);
+    background-color: var(--dark-color);
+    border: 2px solid transparent;
+    border-image: var(--linear-color);
+    border-image-slice: 1;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #ffffff10;
+    }
+
+    &:active {
+      background-color: #ffffff20;
+    }
+
+    text-decoration: none;
+    display: inline-block;
+  }
+
+}
+
+.has-dropdown {
+  position: relative;
+
+  &:hover .dropdown {
+    display: block;
+  }
+
+  .header__link {
+    cursor: pointer;
+  }
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--black50-color);
+  padding: 10px 0;
+  list-style: none;
+  min-width: 160px;
+  z-index: 1000;
+
+  li {
+    padding: 0;
+    margin: 0;
+  }
+
+  .dropdown__link {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: var(--white-color);
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 300;
+    transition: 0.2s;
+
+    &:hover {
+      background-color: #ffffff10;
+      font-weight: 500;
+    }
+  }
+}

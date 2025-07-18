@@ -1,26 +1,12 @@
-import logo from '../assets/img/logo.png';
+import NavBar from '../components/NavBar';
 import wave from '../assets/img/wave.png';
-import '../assets/scss/Home.scss'
 import '../assets/scss/ContactUs.scss'
-import { Link } from 'react-router-dom';
 
 function ContactUs() {
   return (
     <>
         <img src={wave} className="wave-bg"/>
-        <header className="header">
-          <img src={logo} alt="header__logo"/>
-          <nav className='header__nav'>
-              <ul>
-                <li><Link to='/' className='header__link'>Home</Link></li>
-                <li><a className='header__link' href="#">About us</a></li>
-                <li><a className='header__link' href="#">Service</a></li>
-                <li><a className='header__link' href="#">Page</a></li>
-                <li><a className='header__link' href="#">Blog</a></li>
-              </ul>
-          </nav>
-          <button className='header__button'>Contanct us</button>
-        </header>
+        <NavBar/>
         <main>
           <section className="contact-hero">
             <div className="contact-hero__content">
