@@ -27,27 +27,29 @@
     justify-items: center;
     grid-template-columns: 1fr 1fr 1fr;
     &__nav {
-        padding: 0px 0px;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        justify-items: center;
-        list-style: none;
+      display: grid;
+      width: 30vw;
+      padding: 0px;
+      list-style: none;
+      justify-items: center;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }
     &__link {
-        font-family: Chakra Petch;
-        font-weight: 300;
-        font-style: Light;
-        font-size: 16px;
-        line-height: 28px;
-        letter-spacing: 0%;
+      font-family: Chakra Petch;
+      font-weight: 300;
+      font-style: Light;
+      font-size: 16px;
+      line-height: 28px;
+      letter-spacing: 0%;
 
-        color: var(--white-color);
-        text-decoration: none;
-        transition: .2s;
-        &:hover {
-        font-size: 17px;
-        font-weight: 500;
-        }
+      color: var(--white-color);
+      text-decoration: none;
+      transition: .2s;
+
+      &:hover {
+      font-size: 17px;
+      font-weight: 500;
+      }
   }
   
   &__button {
@@ -94,14 +96,17 @@
 }
 
 .dropdown {
-  display: none;
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: var(--black50-color);
-  padding: 10px 0;
+
+  display: none;
+  padding: 10px 10px;
   list-style: none;
   min-width: 160px;
+  
+  border-radius: 20px;
+  background-color: var(--black100-color);
   z-index: 1000;
 
   li {
@@ -123,4 +128,18 @@
       font-weight: 500;
     }
   }
+  ::after{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    background-color: var(--black100-color);
+  }
+}
+.Cool-cat {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
