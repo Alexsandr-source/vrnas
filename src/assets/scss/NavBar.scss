@@ -45,10 +45,21 @@
       color: var(--white-color);
       text-decoration: none;
       transition: .2s;
+      &-active {
+        font-family: Chakra Petch;
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 28px;
+        letter-spacing: 0%;
 
+        color: var(--white-color);
+        text-decoration: none;
+        transition: .2s;
+      }
       &:hover {
-      font-size: 17px;
-      font-weight: 500;
+        font-size: 17px;
+        font-weight: 500;
+        cursor: pointer;
       }
   }
   
@@ -89,10 +100,6 @@
   &:hover .dropdown {
     display: block;
   }
-
-  .header__link {
-    cursor: pointer;
-  }
 }
 
 .dropdown {
@@ -124,7 +131,9 @@
     transition: 0.2s;
 
     &:hover {
-      background-color: #ffffff10;
+      font-weight: 500;
+    }
+    &:active {
       font-weight: 500;
     }
   }
@@ -136,10 +145,4 @@
     height: 10px;
     background-color: var(--black100-color);
   }
-}
-.Cool-cat {
-  margin-top: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }

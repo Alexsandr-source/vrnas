@@ -8,7 +8,7 @@ function Home() {
         <img src={wave} className="wave-bg"/>
         <NavBar/>
         <main className='Cool-cat'>
-          <img src="https://media.tenor.com/13MO7LUAShwAAAAM/fadding-cat.gif" alt="Cool cat" />
+          
         </main>
         <footer>
           

@@ -13,7 +13,7 @@ import './App.scss';
 
 function App() {
   return (
-    <body>
+    <>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/about' element={<About/>}/>
@@ -26,7 +26,7 @@ function App() {
         <Route path='/tems-and-conditions' element={<TemsAndConfitions/>}/>
         <Route path='/faq' element={<FAQ/>}/>
       </Routes>
-    </body>
+    </>
   );
 }
 
