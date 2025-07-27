@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;700&display=swap');
+
+:root {
+  --linear-color: linear-gradient(to right, var(--blue-color), var(--purple10-color)) 1;
+  --purple10-color: #CA6AEB;
+  --blue-color: #19B5F1;
+  --black100-color: #181818;
+  --black50-color: #252532;
+  --grey1-color: #B0B0B2;
+  --grey2-color: #D1D1D1;
+  --white-color: #FFFFFF;
+}
+
+.intro {
+  display: flex;
+}
+.video-block {
+  height: 400px;
+  width: 400px;
+  
+}

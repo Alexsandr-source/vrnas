@@ -1,13 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/img/logo.png';
-import wave from '../assets/img/wave.png';
 import '../assets/scss/NavBar.scss';
 
 function NavBar() {
   return (
     <>
-      <img src={wave} className="wave-bg" alt="background" />
       <header className="header">
         <img src={logo} alt="Company logo" />
         <nav>
