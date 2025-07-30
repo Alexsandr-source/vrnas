@@ -15,7 +15,11 @@
   display: flex;
 }
 .video-block {
+  background-color: red; // временно
   height: 400px;
   width: 400px;
-  
+}
+
+.video-js {
+  background-color: black !important; // видео должно появиться на чёрном фоне
 }

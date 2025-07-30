@@ -1,28 +1,17 @@
 import React, { useRef } from 'react';
+import ReactPlayer from "react-player";
 import NavBar from '../components/NavBar';
+import video from '../assets/video/video.mp4';
 import wave from '../assets/img/wave.png';
 import normalMan from '../assets/img/normalMan.png'
-import videoFile from '../assets/video/video.mp4';
-import VideoJS from '../components/VideoJs';
-import videojs from 'video.js';
+import man1 from '../assets/img/man1.png'
+import man2 from '../assets/img/man2.png'
+import man3 from '../assets/img/man3.png'
 import 'video.js/dist/video-js.css';
 import '../assets/scss/NavBar.scss'
 import '../assets/scss/Home.scss'
 
 function Home() {
-  const playerRef = useRef(null);
-  const options = {
-    autoplay: true,
-    controls: true,
-    responsive: true,
-    fluid: true,
-    sources: [{ src: videoFile, type: 'video/mp4' }],
-  };
-  const handleReady = (player) => {
-    playerRef.current = player;
-    player.on('waiting', () => videojs.log('waiting'));
-    player.on('dispose', () => videojs.log('disposed'));
-  };
 
   return (
     <>
@@ -41,18 +30,17 @@ function Home() {
               <div>
                 <div>
                   <div>
-                    <img src="" alt="" />
-                    <img src="" alt="" />
-                    <img src="" alt="" />
+                    <img src={man1} alt="" />
+                    <img src={man2} alt="" />
+                    <img src={man3} alt="" />
                   </div>
                   <p><span>32k+</span> Happy Client</p>
                 </div>
-                <div className="video-block">
-                  <VideoJS options={options} onReady={(player) => {
-                    player.on('waiting', () => videojs.log('waiting'));
-                    player.on('dispose', () => videojs.log('disposed'));
-                  }} />
-                </div>
+                <ReactPlayer
+                url={video}
+                height='300px'
+                width='500px'
+                controls={true}/>
               </div>
             </div>
             <img src={normalMan} alt="normal man"/>
