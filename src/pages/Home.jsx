@@ -12,20 +12,21 @@ import '../assets/scss/NavBar.scss'
 import '../assets/scss/Home.scss'
 
 function Home() {
+  const playerRef = useRef(null);
+
+  const videoJsOptions = {
+    autoplay: true,
+    controls: true,
+    responsive: true,
+    fluid: true,
+    sources: [{
+      src: '../assets/video/video.mp4',
+      type: 'video/mp4'
+    }]
+  };
 
   const handlePlayerReady = (player) => {
     playerRef.current = player;
-
-    const videoJsOptions = {
-      autoplay: true,
-      controls: true,
-      responsive: true,
-      fluid: true,
-      sources: [{
-        src: '../assets/video/video.mp4',
-        type: 'video/mp4'
-      }]
-    };
 
     player.on('waiting', () => {
       console.log('player is waiting');
