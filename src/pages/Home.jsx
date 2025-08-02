@@ -1,41 +1,19 @@
 import React, { useRef } from 'react';
 import ReactPlayer from "react-player";
-import VideoJS from '../components/VideoJs';
 import NavBar from '../components/NavBar';
+import VideoPlayer from '../components/VideoPlayer';
 import wave from '../assets/img/wave.png';
 import normalMan from '../assets/img/normalMan.png'
 import man1 from '../assets/img/man1.png'
 import man2 from '../assets/img/man2.png'
 import man3 from '../assets/img/man3.png'
+import VideoThumb from '../assets/img/thumbnail.png'
+import MyVideo from '../assets/video/video.mp4';
 import 'video.js/dist/video-js.css';
 import '../assets/scss/NavBar.scss'
 import '../assets/scss/Home.scss'
 
 function Home() {
-  const playerRef = useRef(null);
-
-  const videoJsOptions = {
-    autoplay: true,
-    controls: true,
-    responsive: true,
-    fluid: true,
-    sources: [{
-      src: '../assets/video/video.mp4',
-      type: 'video/mp4'
-    }]
-  };
-
-  const handlePlayerReady = (player) => {
-    playerRef.current = player;
-
-    player.on('waiting', () => {
-      console.log('player is waiting');
-    });
-
-    player.on('dispose', () => {
-      console.log('player will dispose');
-    });
-  };
 
   return (
     <>
@@ -60,7 +38,9 @@ function Home() {
                   </div>
                   <p><span>32k+</span> Happy Client</p>
                 </div>
-                <VideoJS options={videoJsOptions} onReady={handlePlayerReady} />
+                <div>
+                  <VideoPlayer src={MyVideo} thumbnail={VideoThumb}/>
+                </div>
               </div>
             </div>
             <img src={normalMan} alt="normal man"/>
