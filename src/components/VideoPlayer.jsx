@@ -2,7 +2,6 @@ import { useRef, useState, useEffect } from "react";
 
 const VideoPlayer = ({ src, thumbnail }) => {
     const videoRef = useRef(null);
-    
     const intervalRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
     const [isFullScreen, setIsFullScreen] = useState(false);
@@ -12,6 +11,16 @@ const VideoPlayer = ({ src, thumbnail }) => {
     const [useNativeContorls, setUseNativeControls] = useState(
         window.innerWidth < 767,
     );
+
+    useEffect(() => {
+        const handleRexize = () => {
+            setUseNativeControls(window.innerWidth < 767);
+        };
+        window.addEventListener('resize', handleRexize);
+        return () => {
+            window.removeEventListener('resize', handleRexize);
+        }
+    }, []);
 
     return (
         <>

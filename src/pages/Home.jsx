@@ -1,7 +1,5 @@
-import React, { useRef } from 'react';
-import ReactPlayer from "react-player";
+import { useRef, useState } from 'react';
 import NavBar from '../components/NavBar';
-import VideoPlayer from '../components/VideoPlayer';
 import wave from '../assets/img/wave.png';
 import normalMan from '../assets/img/normalMan.png'
 import man1 from '../assets/img/man1.png'
@@ -9,9 +7,12 @@ import man2 from '../assets/img/man2.png'
 import man3 from '../assets/img/man3.png'
 import VideoThumb from '../assets/img/thumbnail.png'
 import MyVideo from '../assets/video/video.mp4';
-import 'video.js/dist/video-js.css';
 import '../assets/scss/NavBar.scss'
 import '../assets/scss/Home.scss'
+
+
+
+
 
 function Home() {
 
@@ -39,7 +40,7 @@ function Home() {
                   <p><span>32k+</span> Happy Client</p>
                 </div>
                 <div>
-                  <VideoPlayer src={MyVideo} thumbnail={VideoThumb}/>
+                  
                 </div>
               </div>
             </div>
