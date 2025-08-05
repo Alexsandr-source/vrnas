@@ -14,12 +14,25 @@
 .intro {
   display: flex;
 }
-.video-block {
-  background-color: red; // временно
-  height: 400px;
-  width: 400px;
-}
 
-.video-js {
-  background-color: black !important; // видео должно появиться на чёрном фоне
+
+.video-wrapper {
+	width: 640px;
+	margin: 0 auto;
+}
+.video-player {
+	width: 640px;
+}
+button {
+	margin: 2px;
+	line-height: 1px;
+}
+button:hover {
+	background-color: #e6e6e6;
+}
+@media all and (max-width: 767px) {
+	.video-player {
+		width: 100%;
+		height: auto;
+	}
 }
