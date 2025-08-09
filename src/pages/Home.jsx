@@ -8,12 +8,7 @@ import man3 from '../assets/img/man3.png'
 import VideoPlayer from '../components/VideoPlayer';
 import VideoThumb from '../assets/img/thumbnail.png'
 import MyVideo from '../assets/video/video.mp4';
-import '../assets/scss/NavBar.scss'
 import '../assets/scss/Home.scss'
-
-
-
-
 
 function Home() {
 
@@ -22,31 +17,35 @@ function Home() {
       <img src={wave} className="wave-bg"/>
       <NavBar/>
       <main>
-        <section className='intro'>
-          <div>
-            <h1>
+        <section className="intro">
+          <div className="intro__content">
+            <h1 className="intro__title">
               Immerse Yourself in Virtual Reality
             </h1>
-            <p>
+            <p className="intro__description">
               Experience Unforgettable Events in VR. Bring your events to life like never before with our VR services
             </p>
-            <button>discover more</button>
-            <div>
-              <div>
-                <div>
-                  <img src={man1} alt="" />
-                  <img src={man2} alt="" />
-                  <img src={man3} alt="" />
+            <button className="intro__button">discover more</button>
+
+            <div className="intro__bottom">
+              <div className="intro__clients">
+                <div className="intro__clients-avatars">
+                  <img className="intro__avatar" src={man1} alt="" />
+                  <img className="intro__avatar" src={man2} alt="" />
+                  <img className="intro__avatar" src={man3} alt="" />
                 </div>
-                <p><span>32k+</span> Happy Client</p>
+                <p className="intro__clients-text">
+                  <span className="intro__clients-count">32k+</span> Happy Client
+                </p>
               </div>
-              <div className='video-wrapper'>
-                <VideoPlayer src={MyVideo} thumbnail={VideoThumb}/>
+              <div className="intro__video">
+                <VideoPlayer src={MyVideo} thumbnail={VideoThumb} />
               </div>
             </div>
           </div>
-          <img src={normalMan} alt="normal man"/>
+          <img className="intro__image" src={normalMan} alt="normal man" />
         </section>
+
       </main>
       <footer>
         

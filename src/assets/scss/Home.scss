@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;700&display=swap');
 
 :root {
-  --linear-color: linear-gradient(to right, var(--blue-color), var(--purple10-color)) 1;
+  --linear-color: linear-gradient(270deg, var(--purple10-color), var(--blue-color));
   --purple10-color: #CA6AEB;
   --blue-color: #19B5F1;
   --black100-color: #181818;
@@ -12,27 +12,77 @@
 }
 
 .intro {
-  display: flex;
+  width: 100vw;
+  margin-top: 25px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr;
+
+  &__content {
+    max-width: 600px;
+  }
+
+  &__button {
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0;
+
+    padding: 12px 24px;
+    color: var(--white-color);
+    background: linear-gradient(270deg, var(--purple10-color), var(--blue-color));
+    border: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  &__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--black100-color);
+    margin-left: -10px;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__clients {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    &-text {
+      font-size: 0.9rem;
+      color: #444;
+
+      span {
+        font-weight: bold;
+        font-size: 1.1rem;
+        color: var(--white-color);
+      }
+    }
+  }
+
+  &__video {
+    max-width: 300px;
+  }
+
+  &__image {
+    max-width: 400px;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
 }
 
-
-.video-wrapper {
-	width: 640px;
-	margin: 0 auto;
-}
-.video-player {
-	width: 640px;
-}
-button {
-	margin: 2px;
-	line-height: 1px;
-}
-button:hover {
-	background-color: #e6e6e6;
-}
-@media all and (max-width: 767px) {
-	.video-player {
-		width: 100%;
-		height: auto;
-	}
-}

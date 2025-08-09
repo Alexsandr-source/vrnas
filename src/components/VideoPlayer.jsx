@@ -8,7 +8,7 @@ import {
 	FaVolumeUp,
 	FaVolumeMute,
 } from 'react-icons/fa';
-import '../assets/scss/Home.scss'
+import '../assets/scss/VideoPlayer.scss'
 
 const VideoPlayer = ({ src, thumbnail }) => {
 	const videoRef = useRef(null);
@@ -108,109 +108,27 @@ const VideoPlayer = ({ src, thumbnail }) => {
 		setProgress(event.target.value);
 	};
 
-	const toggleMute = () => {
-		const currentVolume = videoRef.current.volume;
-		if (currentVolume > 0) {
-			videoRef.current.volume = 0;
-			setVolume(0);
-			setIsMuted(true);
-		} else {
-			videoRef.current.volume = 1;
-			setVolume(1);
-			setIsMuted(false);
-		}
-	};
-
-	const handleVolumeChange = (event) => {
-		const newVolume = event.target.value;
-		videoRef.current.volume = newVolume;
-		setVolume(newVolume);
-		setIsMuted(newVolume === 0);
-	};
-
-	const toggleFullScreen = () => {
-		if (!isFullScreen) {
-			if (videoRef.current.requestFullscreen) {
-				videoRef.current.requestFullscreen();
-			} else if (videoRef.current.mozRequestFullScreen) {
-				/* Firefox */
-				videoRef.current.mozRequestFullScreen();
-			} else if (videoRef.current.webkitRequestFullscreen) {
-				/* Chrome, Safari & Opera */
-				videoRef.current.webkitRequestFullscreen();
-			} else if (videoRef.current.msRequestFullscreen) {
-				/* IE/Edge */
-				videoRef.current.msRequestFullscreen();
-			}
-		} else {
-			if (document.exitFullscreen) {
-				document.exitFullscreen();
-			} else if (document.mozCancelFullScreen) {
-				/* Firefox */
-				document.mozCancelFullScreen();
-			} else if (document.webkitExitFullscreen) {
-				/* Chrome, Safari and Opera */
-				document.webkitExitFullscreen();
-			} else if (document.msExitFullscreen) {
-				/* IE/Edge */
-				document.msExitFullscreen();
-			}
-		}
-		setIsFullScreen(!isFullScreen);
-	};
-
-	// Listen for fullscreen change events (for exiting fullscreen with ESC key)
-	document.addEventListener('fullscreenchange', () => {
-		setIsFullScreen(!!document.fullscreenElement);
-	});
-
-	// This effect cleans up the event listener when the component unmounts
-	useEffect(() => {
-		const handleFullScreenChange = () =>
-			setIsFullScreen(!!document.fullscreenElement);
-		document.addEventListener('fullscreenchange', handleFullScreenChange);
-
-		return () => {
-			document.removeEventListener('fullscreenchange', handleFullScreenChange);
-		};
-	}, []);
-
 	const renderCustomControls = () => {
 		return (
 			<>
-				<button onClick={togglePlayPause}>
+				<button className='video-play' onClick={togglePlayPause}>
 					{isPlaying ? <FaPause /> : <FaPlay />}
 				</button>
-				<button onClick={stopVideo}>
-					<FaStop />
-				</button>
+
 				<input
+					className='progress-bar'
 					type='range'
 					min='0'
 					max='100'
 					value={progress}
 					onChange={handleSeek}
 				/>
-				<button onClick={toggleMute}>
-					{isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
-				</button>
-				<input
-					type='range'
-					min='0'
-					max='1'
-					step='0.05'
-					value={volume}
-					onChange={handleVolumeChange}
-				/>
-				<button onClick={toggleFullScreen}>
-					{isFullScreen ? <FaCompress /> : <FaExpand />}
-				</button>
 			</>
 		);
 	};
 
 	return (
-		<>
+		<div className='video-wrapper'>
 			<video
 				className='video-player'
 				ref={videoRef}
@@ -221,8 +139,7 @@ const VideoPlayer = ({ src, thumbnail }) => {
 				onPause={stopProgressLoop}
 				controls={useNativeControls} // Use native controls based on viewport width
 			/>
-			{!useNativeControls && renderCustomControls()}
-		</>
+		</div>
 	);
 };
 
