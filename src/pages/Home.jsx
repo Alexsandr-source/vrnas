@@ -1,4 +1,3 @@
-import { useRef, useState } from 'react';
 import NavBar from '../components/NavBar';
 import wave from '../assets/img/wave.png';
 import normalMan from '../assets/img/normalMan.png'
@@ -38,9 +37,7 @@ function Home() {
                   <span className="intro__clients-count">32k+</span> Happy Client
                 </p>
               </div>
-              <div className="intro__video">
-                <VideoPlayer src={MyVideo} thumbnail={VideoThumb} />
-              </div>
+              <VideoPlayer src={MyVideo} thumbnail={VideoThumb} />
             </div>
           </div>
           <img className="intro__image" src={normalMan} alt="normal man" />
