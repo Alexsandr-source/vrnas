@@ -17,30 +17,36 @@ const VideoPlayer = ({ src, thumbnail }) => {
 		com.current.style.display = 'none';
 		videoPlayer.current.play();
 	}
-	let observer = new IntersectionObserver(() => {
-		if (!videoPlayer.current.paused) {
-			videoPlayer.current.pause()
-		} else if(videoPlayer.current.currentTime !== 0) {
-			videoPlayer.current.play()
-		}
-		observer.observe(video)
-	}, { threshold: 0.4 })
+	useEffect(() => {
+
+		let observer = new IntersectionObserver(() => {
+			if (!videoPlayer.current.paused) {
+				videoPlayer.current.pause()
+			} else if(videoPlayer.current.currentTime !== 0) {
+				videoPlayer.current.play()
+			}
+		}, { threshold: 0.4 })
+
+		observer.observe(video.current)
+		return () => observer.disconnect();
+	}, [])
+
 	function videoAct() {
 		if(videoPlayer.current.paused) {
 			videoHub.current.style.display = 'block';
 			com.current.style.display = 'none';
 			videoPlayer.current.play();
-			actionImage.current.setAttribute('src', {src});
-			actionButton.current.setAttribute('className','video__hud__element video__hud__action video__hud__action_play');
+			actionImage.current.src = src;
+			actionButton.current.className = "video__hud__element video__hud__action video__hud__action_play";
 		} else {
 			videoPlayer.current.pause();
-			actionImage.current.src = {src};
-			actionButton.current.setAttribute('className','video__hud__element video__hud__action video__hud__action_pause');
+			actionImage.current.src = src;
+			actionButton.current.className = "video__hud__element video__hud__action video__hud__action_pause";
 		}
 	}
 	function videoChangeTime(e) {
-		let mouseX = Math.floor(e.pageX - progressLine.offsetLeft);
-		let progress = mouseX / (progressLine.offsetWidth / 100);
+		let mouseX = Math.floor(e.pageX - progressLine.current.offsetLeft);
+		let progress = mouseX / (progressLine.current.offsetWidth / 100);
 		videoPlayer.current.currentTime = videoPlayer.current.duration * (progress / 100);
 	}
 
