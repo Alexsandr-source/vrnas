@@ -17,31 +17,20 @@ const VideoPlayer = ({ src, thumbnail }) => {
 		com.current.style.display = 'none';
 		videoPlayer.current.play();
 	}
-
 	useEffect(() => {
-	const handleTimeUpdate = () => {
-		const { currentTime, duration } = videoPlayer.current;
-		if (!duration) return;
-		const progress = (currentTime / duration) * 100;
-		progressFill.current.style.width = progress + "%";
-	};
+		const handleTimeUpdate = () => {
+			const { currentTime, duration } = videoPlayer.current;
+			if (!duration) return;
+			const progress = (currentTime / duration) * 100;
+			progressFill.current.style.width = progress + "%";
+		};
 
-	videoPlayer.current.addEventListener("timeupdate", handleTimeUpdate);
+		videoPlayer.current.addEventListener("timeupdate", handleTimeUpdate);
 
-	return () => {
-		videoPlayer.current.removeEventListener("timeupdate", handleTimeUpdate);
-	};
+		return () => {
+			videoPlayer.current.removeEventListener("timeupdate", handleTimeUpdate);
+		};
 	}, []);
-
-
-	videoPlayer.current.addEventListener("timeupdate", handleTimeUpdate);
-
-	return () => {
-		videoPlayer.current.removeEventListener("timeupdate", handleTimeUpdate);
-	};
-	}, []);
-
-
 	useEffect(() => {
 		let observer = new IntersectionObserver(() => {
 			if (!videoPlayer.current.paused) {
@@ -53,7 +42,6 @@ const VideoPlayer = ({ src, thumbnail }) => {
 		observer.observe(video.current)
 		return () => observer.disconnect();
 	}, [])
-
 	function videoAct() {
 		if(videoPlayer.current.paused) {
 			videoHub.current.style.display = 'block';
@@ -71,8 +59,24 @@ const VideoPlayer = ({ src, thumbnail }) => {
 		let mouseX = Math.floor(e.pageX - progressLine.current.offsetLeft);
 		let progress = mouseX / (progressLine.current.offsetWidth / 100);
 		videoPlayer.current.currentTime = videoPlayer.current.duration * (progress / 100);
+		progressFill.current.style.width = progress + "%";
 	}
-
+	function enableProgressDrag() {
+		function handleMouseMove(e) {
+			// тут считаешь новую позицию и обновляешь currentTime + ширину прогресс бара
+		}
+		function handleMouseUp() {
+			// убираешь слушатель mousemove и mouseup
+		}
+		// при нажатии мышки на progressLine
+		progressLine.current.addEventListener("mousedown", (e) => {
+			// сразу обновляешь позицию (как при клике)
+			videoChangeTime(e);
+			// подписываешься на mousemove и mouseup
+			document.addEventListener("mousemove", handleMouseMove);
+			document.addEventListener("mouseup", handleMouseUp);
+		});
+	}
 	return (
 		<div ref={video} className='video'>
             <video ref={videoPlayer} className='video__player' onClick={videoAct} src={src} thumbnail={thumbnail} preload='metadata'></video>
