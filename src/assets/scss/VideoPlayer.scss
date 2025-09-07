@@ -1,20 +1,13 @@
-// .video-wrapper {
-// 	width: 100%;
-// 	height: 100px;
-// 	margin: 0 auto;
-// }
-
-// .video-play {
-// 	margin-right: 10px;
-// }
-
+.com {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-left: 2%;
+    z-index: 2;
+}
 .video {
     position: relative;
-    width:100%;
-    height: 100px;
-    margin: 0 auto;
-    margin-top: 60px;
-
+    z-index: 1;
     &__player {
         width:100%;
         margin:0;

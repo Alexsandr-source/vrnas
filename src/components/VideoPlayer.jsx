@@ -1,22 +1,26 @@
 import { useEffect, useRef } from "react";
 import playFirst from "../assets/img/play.svg";
+import playIcon from "../assets/img/play.svg";
+import pauseIcon from "../assets/img/pause.svg";
 import "../assets/scss/VideoPlayer.scss";
 
 const VideoPlayer = ({ src, thumbnail }) => {
 	const com = useRef(null),
-	videoHub = useRef(null),
-	video = useRef(null),
-	videoPlayer = useRef(null),
-	progressLine = useRef(null),
-	progressFill = useRef(null),
-	actionButton = useRef(null),
-	actionImage = useRef(null)
+		videoHub = useRef(null),
+		video = useRef(null),
+		videoPlayer = useRef(null),
+		progressLine = useRef(null),
+		progressFill = useRef(null),
+		actionButton = useRef(null),
+		actionImage = useRef(null);
 
 	function videoStart() {
-		videoHub.current.style.display = 'block';
-		com.current.style.display = 'none';
+		videoHub.current.style.display = "block";
+		com.current.style.display = "none";
 		videoPlayer.current.play();
+		updateButtonUI();
 	}
+
 	useEffect(() => {
 		const handleTimeUpdate = () => {
 			const { currentTime, duration } = videoPlayer.current;
@@ -25,75 +29,132 @@ const VideoPlayer = ({ src, thumbnail }) => {
 			progressFill.current.style.width = progress + "%";
 		};
 
-		videoPlayer.current.addEventListener("timeupdate", handleTimeUpdate);
+		const vid = videoPlayer.current;
+		if (vid) vid.addEventListener("timeupdate", handleTimeUpdate);
 
 		return () => {
-			videoPlayer.current.removeEventListener("timeupdate", handleTimeUpdate);
+			if (vid) vid.removeEventListener("timeupdate", handleTimeUpdate);
 		};
 	}, []);
+
 	useEffect(() => {
-		let observer = new IntersectionObserver(() => {
-			if (!videoPlayer.current.paused) {
-				videoPlayer.current.pause()
-			} else if(videoPlayer.current.currentTime !== 0) {
-				videoPlayer.current.play()
-			}
-		}, { threshold: 0.4 })
-		observer.observe(video.current)
+		let observer = new IntersectionObserver(
+			([entry]) => {
+				if (!entry.isIntersecting && !videoPlayer.current.paused) {
+					videoPlayer.current.pause();
+					updateButtonUI();
+				}
+			},
+			{ threshold: 0.4 }
+		);
+		if (video.current) observer.observe(video.current);
 		return () => observer.disconnect();
-	}, [])
-	function videoAct() {
-		if(videoPlayer.current.paused) {
-			videoHub.current.style.display = 'block';
-			com.current.style.display = 'none';
-			videoPlayer.current.play();
-			actionImage.current.src = src;
-			actionButton.current.className = "video__hud__element video__hud__action video__hud__action_play";
+	}, []);
+
+	function updateButtonUI() {
+		if (videoPlayer.current.paused) {
+			actionImage.current.src = playIcon;
+			actionButton.current.className =
+				"video__hud__element video__hud__action video__hud__action_play";
 		} else {
-			videoPlayer.current.pause();
-			actionImage.current.src = src;
-			actionButton.current.className = "video__hud__element video__hud__action video__hud__action_pause";
+			actionImage.current.src = pauseIcon;
+			actionButton.current.className =
+				"video__hud__element video__hud__action video__hud__action_pause";
 		}
 	}
+
+	function videoAct() {
+		if (videoPlayer.current.paused) {
+			videoHub.current.style.display = "block";
+			com.current.style.display = "none";
+			videoPlayer.current.play();
+		} else {
+			videoPlayer.current.pause();
+		}
+		updateButtonUI();
+	}
+
 	function videoChangeTime(e) {
-		let mouseX = Math.floor(e.pageX - progressLine.current.offsetLeft);
-		let progress = mouseX / (progressLine.current.offsetWidth / 100);
+		const rect = progressLine.current.getBoundingClientRect();
+		let mouseX = e.clientX - rect.left;
+		let progress = (mouseX / rect.width) * 100;
+		progress = Math.max(0, Math.min(progress, 100));
 		videoPlayer.current.currentTime = videoPlayer.current.duration * (progress / 100);
 		progressFill.current.style.width = progress + "%";
 	}
-	function enableProgressDrag() {
+
+	useEffect(() => {
 		function handleMouseMove(e) {
-			// тут считаешь новую позицию и обновляешь currentTime + ширину прогресс бара
+			videoChangeTime(e);
 		}
 		function handleMouseUp() {
-			// убираешь слушатель mousemove и mouseup
+			document.removeEventListener("mousemove", handleMouseMove);
+			document.removeEventListener("mouseup", handleMouseUp);
 		}
-		// при нажатии мышки на progressLine
-		progressLine.current.addEventListener("mousedown", (e) => {
-			// сразу обновляешь позицию (как при клике)
+
+		const handleMouseDown = (e) => {
 			videoChangeTime(e);
-			// подписываешься на mousemove и mouseup
 			document.addEventListener("mousemove", handleMouseMove);
 			document.addEventListener("mouseup", handleMouseUp);
-		});
-	}
+		};
+
+		const bar = progressLine.current;
+		if (bar) {
+			bar.addEventListener("mousedown", handleMouseDown);
+		}
+
+		return () => {
+			if (bar) {
+				bar.removeEventListener("mousedown", handleMouseDown);
+			}
+		};
+	}, []);
+
+	//Com
+	useEffect(() => {
+		if (videoPlayer.current) {
+			const width = videoPlayer.current.offsetWidth;
+			com.current.style.bottom = `${width * 0.375}px`;
+		}
+	}, []);
+
+
 	return (
-		<div ref={video} className='video'>
-            <video ref={videoPlayer} className='video__player' onClick={videoAct} src={src} thumbnail={thumbnail} preload='metadata'></video>
-            <div ref={com} className="com" onClick={videoStart}>
-                <img src={playFirst} alt="play"/>
-            </div>
-            <div ref={videoHub} className='video__hud'>
-                <div ref={actionButton} className='video__hud__element video__hud__action video__hud__action_play' onClick={videoAct}>
-                    <img ref={actionImage} className="video__hud__action_img" src="./assets/img/Arrow.svg" alt=""/>
-                </div>
-                <div className='video__hud__element video__hud__progress'>
-                    <div ref={progressLine} value='0' max='100' className='video__hud__element video__hud__progress_line' onClick={videoChangeTime}>
+		<div ref={video} className="video">
+			<video
+				ref={videoPlayer}
+				className="video__player"
+				onClick={videoAct}
+				src={src}
+				poster={thumbnail}
+				preload="metadata"
+			></video>
+			<div ref={com} className="com" onClick={videoStart}>
+				<img src={playFirst} alt="play" />
+			</div>
+			<div ref={videoHub} className="video__hud">
+				<div
+					ref={actionButton}
+					className="video__hud__element video__hud__action video__hud__action_play"
+					onClick={videoAct}
+				>
+					<img
+						ref={actionImage}
+						className="video__hud__action_img"
+						src={playIcon}
+						alt="action button"
+					/>
+				</div>
+				<div className="video__hud__element video__hud__progress">
+					<div
+						ref={progressLine}
+						className="video__hud__element video__hud__progress_line"
+					>
 						<div ref={progressFill} className="progress-fill"></div>
 					</div>
-                </div>
-            </div>
-        </div>
+				</div>
+			</div>
+		</div>
 	);
 };
 
