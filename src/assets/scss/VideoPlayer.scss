@@ -3,11 +3,29 @@
     display: flex;
     justify-content: center;
     padding-left: 2%;
-    z-index: 2;
+    z-index: 999;
 }
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
+    background-color: rgba(0,0,0,.8);
+}
+.video_fixed {
+  position: fixed;
+  top: 25vh;
+  left: 25vw;
+  width: 50vw;
+  height: 50vh;
+  z-index: 6;
+}
+
 .video {
     position: relative;
-    z-index: 1;
+    z-index: 6;
     &__player {
         width:100%;
         margin:0;

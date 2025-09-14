@@ -1,10 +1,11 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import playFirst from "../assets/img/play.svg";
 import playIcon from "../assets/img/play.svg";
 import pauseIcon from "../assets/img/pause.svg";
 import "../assets/scss/VideoPlayer.scss";
 
 const VideoPlayer = ({ src, thumbnail }) => {
+	const [isFixed, setIsFixed] = useState(false);
 	const com = useRef(null),
 		videoHub = useRef(null),
 		video = useRef(null),
@@ -15,6 +16,7 @@ const VideoPlayer = ({ src, thumbnail }) => {
 		actionImage = useRef(null);
 
 	function videoStart() {
+		setIsFixed(prev => !prev)
 		videoHub.current.style.display = "block";
 		com.current.style.display = "none";
 		videoPlayer.current.play();
@@ -74,27 +76,13 @@ const VideoPlayer = ({ src, thumbnail }) => {
 		updateButtonUI();
 	}
 
-	function videoChangeTime(e) {
-		const rect = progressLine.current.getBoundingClientRect();
-		let mouseX = e.clientX - rect.left;
-		let progress = (mouseX / rect.width) * 100;
-		progress = Math.max(0, Math.min(progress, 100));
-		videoPlayer.current.currentTime = videoPlayer.current.duration * (progress / 100);
-		progressFill.current.style.width = progress + "%";
-	}
 
 	useEffect(() => {
-		function handleMouseMove(e) {
-			videoChangeTime(e);
-		}
 		function handleMouseUp() {
-			document.removeEventListener("mousemove", handleMouseMove);
 			document.removeEventListener("mouseup", handleMouseUp);
 		}
 
 		const handleMouseDown = (e) => {
-			videoChangeTime(e);
-			document.addEventListener("mousemove", handleMouseMove);
 			document.addEventListener("mouseup", handleMouseUp);
 		};
 
@@ -120,37 +108,40 @@ const VideoPlayer = ({ src, thumbnail }) => {
 
 
 	return (
-		<div ref={video} className="video">
-			<video
-				ref={videoPlayer}
-				className="video__player"
-				onClick={videoAct}
-				src={src}
-				poster={thumbnail}
-				preload="metadata"
-			></video>
-			<div ref={com} className="com" onClick={videoStart}>
-				<img src={playFirst} alt="play" />
-			</div>
-			<div ref={videoHub} className="video__hud">
-				<div
-					ref={actionButton}
-					className="video__hud__element video__hud__action video__hud__action_play"
+		<div className={`${isFixed ? "container" : ""}`}>
+			<img src="" alt="close"/>
+			<div ref={video} className={`${isFixed ? "video_fixed" : "video"}`}>
+				<video
+					ref={videoPlayer}
+					className="video__player"
 					onClick={videoAct}
-				>
-					<img
-						ref={actionImage}
-						className="video__hud__action_img"
-						src={playIcon}
-						alt="action button"
-					/>
+					src={src}
+					poster={thumbnail}
+					preload="metadata"
+				></video>
+				<div ref={com} className="com" onClick={videoStart}>
+					<img src={playFirst} alt="play" />
 				</div>
-				<div className="video__hud__element video__hud__progress">
+				<div ref={videoHub} className="video__hud">
 					<div
-						ref={progressLine}
-						className="video__hud__element video__hud__progress_line"
+						ref={actionButton}
+						className="video__hud__element video__hud__action video__hud__action_play"
+						onClick={videoAct}
 					>
-						<div ref={progressFill} className="progress-fill"></div>
+						<img
+							ref={actionImage}
+							className="video__hud__action_img"
+							src={playIcon}
+							alt="action button"
+						/>
+					</div>
+					<div className="video__hud__element video__hud__progress">
+						<div
+							ref={progressLine}
+							className="video__hud__element video__hud__progress_line"
+						>
+							<div ref={progressFill} className="progress-fill"></div>
+						</div>
 					</div>
 				</div>
 			</div>
