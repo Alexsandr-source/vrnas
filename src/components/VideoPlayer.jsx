@@ -13,13 +13,23 @@ const VideoPlayer = ({ src, thumbnail }) => {
 		progressLine = useRef(null),
 		progressFill = useRef(null),
 		actionButton = useRef(null),
-		actionImage = useRef(null);
+		actionImage = useRef(null),
+		closeButton = useRef(null);
 
 	function videoStart() {
 		setIsFixed(prev => !prev)
-		videoHub.current.style.display = "block";
+		videoHub.current.style.display = "flex";
 		com.current.style.display = "none";
 		videoPlayer.current.play();
+		updateButtonUI();
+	}
+
+	function videoClose() {
+		setIsFixed(prev => !prev)
+		com.current.style.display = "flex";
+		videoHub.current.style.display = "none";
+		videoPlayer.current.pause();
+		videoPlayer.current.currentTime = 0;
 		updateButtonUI();
 	}
 
@@ -100,16 +110,14 @@ const VideoPlayer = ({ src, thumbnail }) => {
 
 	//Com
 	useEffect(() => {
-		if (videoPlayer.current) {
-			const width = videoPlayer.current.offsetWidth;
-			com.current.style.bottom = `${width * 0.375}px`;
-		}
+		const width = videoPlayer.current.offsetWidth;
+		com.current.style.bottom = `${width * 0.375}px`;
 	}, []);
 
 
 	return (
 		<div className={`${isFixed ? "container" : ""}`}>
-			<img src="" alt="close"/>
+			<img ref={closeButton} className={`${isFixed ? "video-open" : "video-close"}`} onClick={videoClose} src="" alt="close"/>
 			<div ref={video} className={`${isFixed ? "video_fixed" : "video"}`}>
 				<video
 					ref={videoPlayer}
