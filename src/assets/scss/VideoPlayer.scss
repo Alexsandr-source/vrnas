@@ -33,9 +33,12 @@
         display: block;
     }
     &__player {
-        width:100%;
+        max-width:200px;
         margin:0;
         border-radius: 6px;
+        &-open {
+            width: 100%;
+        }
     }
     &__hud {
         width: 100%;

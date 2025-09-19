@@ -21,6 +21,8 @@ const VideoPlayer = ({ src, thumbnail }) => {
 		videoHub.current.style.display = "flex";
 		com.current.style.display = "none";
 		videoPlayer.current.play();
+		videoPlayer.current.remove.className = "video__player";
+		videoPlayer.current.add.className = "video__player-open";
 		updateButtonUI();
 	}
 
@@ -121,7 +123,7 @@ const VideoPlayer = ({ src, thumbnail }) => {
 			<div ref={video} className={`${isFixed ? "video_fixed" : "video"}`}>
 				<video
 					ref={videoPlayer}
-					className="video__player"
+					className={"video__player"}
 					onClick={videoAct}
 					src={src}
 					poster={thumbnail}
