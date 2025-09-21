@@ -14,6 +14,7 @@ const VideoPlayer = ({ src, thumbnail }) => {
 		progressFill = useRef(null),
 		actionButton = useRef(null),
 		actionImage = useRef(null),
+		videoThumbnail = useRef(null),
 		closeButton = useRef(null);
 
 	function videoStart() {
@@ -21,9 +22,7 @@ const VideoPlayer = ({ src, thumbnail }) => {
 		videoHub.current.style.display = "flex";
 		com.current.style.display = "none";
 		videoPlayer.current.play();
-
 		videoPlayer.current.classList.toggle("video__player-open");
-
 		updateButtonUI();
 	}
 
@@ -32,10 +31,8 @@ const VideoPlayer = ({ src, thumbnail }) => {
 		com.current.style.display = "flex";
 		videoHub.current.style.display = "none";
 		videoPlayer.current.pause();
-		videoPlayer.current.currentTime = 0;
-		
 		videoPlayer.current.classList.toggle("video__player-open");
-
+		videoThumbnail.current.style.display = "flex";
 		updateButtonUI();
 	}
 
@@ -119,13 +116,22 @@ const VideoPlayer = ({ src, thumbnail }) => {
 		const width = videoPlayer.current.offsetWidth;
 		com.current.style.bottom = `${width * 0.375}px`;
 	}, []);
+	useEffect(() => {
+		const width = videoPlayer.current.offsetWidth;
+		com.current.style.bottom = `${width * 0.375}px`;
+	}, [isFixed]);
 
 
 	return (
 		<div className={`${isFixed ? "container" : ""}`}>
 			<img ref={closeButton} className={`${isFixed ? "video-open" : "video-close"}`} onClick={videoClose} src="" alt="close"/>
 			<div ref={video} className={`${isFixed ? "video_fixed" : "video"}`}>
-			<img src={src} alt="" />
+				<img 
+					ref={videoThumbnail} 
+					className="thumbnail" 
+					src={thumbnail} 
+					alt=""
+				/>
 				<video
 					ref={videoPlayer}
 					className={"video__player"}

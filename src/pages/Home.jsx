@@ -5,7 +5,7 @@ import man1 from '../assets/img/man1.png'
 import man2 from '../assets/img/man2.png'
 import man3 from '../assets/img/man3.png'
 import VideoPlayer from '../components/VideoPlayer';
-import VideoThumb from '../assets/img/thumbnail.png'
+import VideoThumb from '../assets/img/thumbnail.png';
 import MyVideo from '../assets/video/video.mp4';
 import '../assets/scss/Home.scss'
 
