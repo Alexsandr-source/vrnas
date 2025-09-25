@@ -50,7 +50,6 @@
     font-weight: 700;
     font-style: Bold;
     font-size: 14px;
-    leading-trim: NONE;
     line-height: 14px;
     letter-spacing: 1.5px;
     text-align: center;
@@ -70,6 +69,7 @@
   }
 
   &__bottom {
+    height: 140px;
     display: flex;
     align-items: center;
     gap: 40px;

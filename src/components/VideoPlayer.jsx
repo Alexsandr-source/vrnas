@@ -20,7 +20,7 @@ const VideoPlayer = ({ src, thumbnail }) => {
 	function videoStart() {
 		setIsFixed(prev => !prev)
 		videoHub.current.style.display = "flex";
-		com.current.style.display = "none";
+		com.current.style.visibility = "hidden";
 		videoPlayer.current.play();
 		videoPlayer.current.classList.toggle("video__player-open");
 		updateButtonUI();
@@ -28,10 +28,11 @@ const VideoPlayer = ({ src, thumbnail }) => {
 
 	function videoClose() {
 		setIsFixed(prev => !prev)
-		com.current.style.display = "flex";
+		com.current.style.visibility = "visible";
 		videoHub.current.style.display = "none";
 		videoPlayer.current.pause();
 		videoPlayer.current.classList.toggle("video__player-open");
+		videoPlayer.current.style.display = "none";
 		videoThumbnail.current.style.display = "flex";
 		updateButtonUI();
 	}
@@ -114,12 +115,8 @@ const VideoPlayer = ({ src, thumbnail }) => {
 	//Com
 	useEffect(() => {
 		const width = videoPlayer.current.offsetWidth;
-		com.current.style.bottom = `${width * 0.375}px`;
+		com.current.style.bottom = `${width * 0.4}px`;
 	}, []);
-	useEffect(() => {
-		const width = videoPlayer.current.offsetWidth;
-		com.current.style.bottom = `${width * 0.375}px`;
-	}, [isFixed]);
 
 
 	return (
