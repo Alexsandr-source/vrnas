@@ -19,8 +19,10 @@ const VideoPlayer = ({ src, thumbnail }) => {
 
 	function videoStart() {
 		setIsFixed(prev => !prev)
-		videoHub.current.style.display = "flex";
 		com.current.style.visibility = "hidden";
+		videoThumbnail.current.style.visibility = "hidden"
+		videoHub.current.style.display = "flex";
+		videoPlayer.current.style.display = "flex";
 		videoPlayer.current.play();
 		videoPlayer.current.classList.toggle("video__player-open");
 		updateButtonUI();
@@ -29,11 +31,11 @@ const VideoPlayer = ({ src, thumbnail }) => {
 	function videoClose() {
 		setIsFixed(prev => !prev)
 		com.current.style.visibility = "visible";
+		videoThumbnail.current.style.visibility = "visible";
 		videoHub.current.style.display = "none";
+		videoPlayer.current.style.display = "none";
 		videoPlayer.current.pause();
 		videoPlayer.current.classList.toggle("video__player-open");
-		videoPlayer.current.style.display = "none";
-		videoThumbnail.current.style.display = "flex";
 		updateButtonUI();
 	}
 
@@ -81,7 +83,7 @@ const VideoPlayer = ({ src, thumbnail }) => {
 
 	function videoAct() {
 		if (videoPlayer.current.paused) {
-			videoHub.current.style.display = "block";
+			videoHub.current.style.display = "flex";
 			com.current.style.display = "none";
 			videoPlayer.current.play();
 		} else {
@@ -114,7 +116,7 @@ const VideoPlayer = ({ src, thumbnail }) => {
 
 	//Com
 	useEffect(() => {
-		const width = videoPlayer.current.offsetWidth;
+		const width = videoThumbnail.current.offsetWidth;
 		com.current.style.bottom = `${width * 0.4}px`;
 	}, []);
 
@@ -123,12 +125,6 @@ const VideoPlayer = ({ src, thumbnail }) => {
 		<div className={`${isFixed ? "container" : ""}`}>
 			<img ref={closeButton} className={`${isFixed ? "video-open" : "video-close"}`} onClick={videoClose} src="" alt="close"/>
 			<div ref={video} className={`${isFixed ? "video_fixed" : "video"}`}>
-				<img 
-					ref={videoThumbnail} 
-					className="thumbnail" 
-					src={thumbnail} 
-					alt=""
-				/>
 				<video
 					ref={videoPlayer}
 					className={"video__player"}
@@ -137,6 +133,12 @@ const VideoPlayer = ({ src, thumbnail }) => {
 					poster={thumbnail}
 					preload="metadata"
 				></video>
+				<img 
+					ref={videoThumbnail} 
+					className="thumbnail" 
+					src={thumbnail} 
+					alt=""
+				/>
 				<div ref={com} className="com" onClick={videoStart}>
 					<img src={playFirst} alt="play" />
 				</div>
