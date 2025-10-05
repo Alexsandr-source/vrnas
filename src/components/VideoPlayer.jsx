@@ -39,6 +39,11 @@ const VideoPlayer = ({ src, thumbnail }) => {
 		updateButtonUI();
 	}
 
+
+
+
+
+
 	useEffect(() => {
 		const handleTimeUpdate = () => {
 			const { currentTime, duration } = videoPlayer.current;
@@ -46,15 +51,73 @@ const VideoPlayer = ({ src, thumbnail }) => {
 			const progress = (currentTime / duration) * 100;
 			progressFill.current.style.width = progress + "%";
 		};
-
 		const vid = videoPlayer.current;
-		if (vid) vid.addEventListener("timeupdate", handleTimeUpdate);
-
+		if (vid) {
+			vid.addEventListener("timeupdate", handleTimeUpdate);
+		}
 		return () => {
-			if (vid) vid.removeEventListener("timeupdate", handleTimeUpdate);
+			if (vid) {
+				vid.removeEventListener("timeupdate", handleTimeUpdate);
+			}
 		};
 	}, []);
 
+
+
+
+
+
+	useEffect(() => {
+		const bar = progressLine.current;
+		let isDragging = false;
+
+		const updateProgress = (e) => {
+			const rect = bar.getBoundingClientRect();
+			const clickX = e.clientX - rect.left;
+			const width = rect.width;
+			let percent = clickX / width;
+
+			// защита от выхода за пределы
+			percent = Math.max(0, Math.min(1, percent));
+
+			progressFill.current.style.width = percent * 100 + "%";
+			videoPlayer.current.currentTime = percent * videoPlayer.current.duration;
+		};
+
+		const handleMouseDown = (e) => {
+			isDragging = true;
+			updateProgress(e);
+			document.addEventListener("mousemove", handleMouseMove);
+			document.addEventListener("mouseup", handleMouseUp);
+		};
+
+		const handleMouseMove = (e) => {
+			if (isDragging) {
+				updateProgress(e);
+			}
+		};
+
+		const handleMouseUp = (e) => {
+			if (isDragging) {
+				updateProgress(e);
+				isDragging = false;
+				document.removeEventListener("mousemove", handleMouseMove);
+				document.removeEventListener("mouseup", handleMouseUp);
+			}
+		};
+
+		if (bar) {
+			bar.addEventListener("mousedown", handleMouseDown);
+		}
+
+		return () => {
+			if (bar) {
+				bar.removeEventListener("mousedown", handleMouseDown);
+			}
+			document.removeEventListener("mousemove", handleMouseMove);
+			document.removeEventListener("mouseup", handleMouseUp);
+		};
+	}, []);
 	useEffect(() => {
 		let observer = new IntersectionObserver(
 			([entry]) => {
@@ -68,7 +131,6 @@ const VideoPlayer = ({ src, thumbnail }) => {
 		if (video.current) observer.observe(video.current);
 		return () => observer.disconnect();
 	}, []);
-
 	function updateButtonUI() {
 		if (videoPlayer.current.paused) {
 			actionImage.current.src = playIcon;
@@ -80,7 +142,6 @@ const VideoPlayer = ({ src, thumbnail }) => {
 				"video__hud__element video__hud__action video__hud__action_pause";
 		}
 	}
-
 	function videoAct() {
 		if (videoPlayer.current.paused) {
 			videoHub.current.style.display = "flex";
@@ -91,35 +152,10 @@ const VideoPlayer = ({ src, thumbnail }) => {
 		}
 		updateButtonUI();
 	}
-
-
-	useEffect(() => {
-		function handleMouseUp() {
-			document.removeEventListener("mouseup", handleMouseUp);
-		}
-
-		const handleMouseDown = (e) => {
-			document.addEventListener("mouseup", handleMouseUp);
-		};
-
-		const bar = progressLine.current;
-		if (bar) {
-			bar.addEventListener("mousedown", handleMouseDown);
-		}
-
-		return () => {
-			if (bar) {
-				bar.removeEventListener("mousedown", handleMouseDown);
-			}
-		};
-	}, []);
-
-	//Com
 	useEffect(() => {
 		const width = videoThumbnail.current.offsetWidth;
 		com.current.style.bottom = `${width * 0.4}px`;
 	}, []);
-
 
 	return (
 		<div className={`${isFixed ? "container" : ""}`}>

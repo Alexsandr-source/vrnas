@@ -7,6 +7,12 @@
         height: 12px;
     }
 }
+.progress-fill {
+  height: 30px;
+  width: 0;
+  background: linear-gradient(to right, #19B5F1, #CA6AEB);
+  transition: width 0.1s linear;
+}
 .thumbnail {
     width:200px;
     margin:0;
@@ -56,6 +62,7 @@
         align-items: center;
         margin:0;
         padding:1px;
+        background-color: #1E212C;
 
         &__element {
             cursor:pointer;
