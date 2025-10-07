@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import playFirst from "../assets/img/play.svg";
 import playIcon from "../assets/img/play.svg";
 import pauseIcon from "../assets/img/pause.svg";
+import closeIcon from "../assets/img/iconClose.png";
 import "../assets/scss/VideoPlayer.scss";
 
 const VideoPlayer = ({ src, thumbnail }) => {
@@ -159,7 +160,7 @@ const VideoPlayer = ({ src, thumbnail }) => {
 
 	return (
 		<div className={`${isFixed ? "container" : ""}`}>
-			<img ref={closeButton} className={`${isFixed ? "video-open" : "video-close"}`} onClick={videoClose} src="" alt="close"/>
+			<img ref={closeButton} className={`${isFixed ? "video-open" : "video-close"} close`} onClick={videoClose} src={closeIcon} alt="close"/>
 			<div ref={video} className={`${isFixed ? "video_fixed" : "video"}`}>
 				<video
 					ref={videoPlayer}

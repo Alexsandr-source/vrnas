@@ -35,7 +35,10 @@
   height: 50vh;
   z-index: 6;
 }
-
+.close {
+    background-color: white;
+    border-radius: 10px;
+}
 .video {
     position: relative;
     z-index: 6;
