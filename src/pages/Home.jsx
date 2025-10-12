@@ -7,6 +7,7 @@ import man3 from '../assets/img/man3.png'
 import VideoPlayer from '../components/VideoPlayer';
 import VideoThumb from '../assets/img/thumbnail.png';
 import MyVideo from '../assets/video/video.mp4';
+import img from '../assets/img/bgLightMan.png'
 import '../assets/scss/Home.scss'
 
 function Home() {

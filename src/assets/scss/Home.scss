@@ -19,10 +19,11 @@
   justify-items: center;
   grid-template-columns: 1fr 1fr;
 
+  
   &__content {
     max-width: 600px;
   }
-
+  
   &__title {
     font-family: Chakra Petch;
     font-weight: 600;
@@ -32,7 +33,7 @@
     letter-spacing: -0.5%;
     color: var(--white-color);
   }
-
+  
   &__description {
     width: 74%;
     font-family: Chakra Petch;
@@ -41,10 +42,10 @@
     font-size: 16px;
     line-height: 28px;
     letter-spacing: 0%;
-
+    
     color: var(--grey2-color);
   }
-
+  
   &__button {
     font-family: Chakra Petch;
     font-weight: 700;
@@ -55,26 +56,26 @@
     text-align: center;
     vertical-align: middle;
     text-transform: uppercase;
-
+    
     padding: 18px 38px;
     color: var(--white-color);
     background: linear-gradient(270deg, var(--purple10-color), var(--blue-color));
     border: 0;
     cursor: pointer;
     transition: all 0.3s ease;
-
+    
     &:hover {
       opacity: .6;
     }
   }
-
+  
   &__bottom {
     height: 140px;
     display: flex;
     align-items: center;
     gap: 40px;
   }
-
+  
   &__avatar {
     width: 40px;
     height: 40px;
@@ -85,23 +86,22 @@
       margin-left: 0;
     }
   }
-
+  
   &__clients {
     display: flex;
     align-items: center;
     gap: 15px;
-
+    
     &-text {
       font-family: Chakra Petch;
       font-weight: 600;
       font-style: SemiBold;
       font-size: 16px;
-      leading-trim: NONE;
       line-height: 28px;
       letter-spacing: 0%;
-
+      
       color: #444;
-
+      
       span {
         font-weight: bold;
         font-size: 1.1rem;
@@ -109,15 +109,12 @@
       }
     }
   }
-
+  
   &__image {
-    max-width: 400px;
-    background-image: url(../img/bgLightMan.svg);
-
-    img {
-      width: 100%;
-      height: auto;
-    }
+    background-image: url("../img/bgLightMan.png");
+    background-size: 250px;
+    background-repeat: no-repeat;
+    background-position: left;
   }
 }
 
