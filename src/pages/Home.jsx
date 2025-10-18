@@ -5,6 +5,7 @@ import man1 from '../assets/img/man1.png'
 import man2 from '../assets/img/man2.png'
 import man3 from '../assets/img/man3.png'
 import VideoPlayer from '../components/VideoPlayer';
+import ECP from '../components/ECP-container';
 import VideoThumb from '../assets/img/thumbnail.png';
 import MyVideo from '../assets/video/video.mp4';
 import img from '../assets/img/bgLightMan.png'
@@ -26,7 +27,6 @@ function Home() {
               Experience Unforgettable Events in VR. Bring your events to life like never before with our VR services
             </p>
             <button className="intro__button">discover more</button>
-
             <div className="intro__bottom">
               <div className="intro__clients">
                 <div className="intro__clients-avatars">
@@ -42,6 +42,9 @@ function Home() {
             </div>
           </div>
           <img className="intro__image" src={normalMan} alt="normal man" />
+        </section>
+        <section>
+          <ECP/>
         </section>
 
       </main>
