@@ -1,6 +1,7 @@
 import ecpImg1 from "../assets/img/ecpImg1.png";
 import ecpImg2 from "../assets/img/ecpImg1.png";
 import ecpImg3 from "../assets/img/ecpImg1.png";
+import "../assets/scss/ECP.scss"
 
 function ECP() {
     return (
