@@ -5,7 +5,7 @@ import man1 from '../assets/img/man1.png'
 import man2 from '../assets/img/man2.png'
 import man3 from '../assets/img/man3.png'
 import VideoPlayer from '../components/VideoPlayer';
-import ECP from '../components/ECP-container';
+import ECP from '../components/ECPcontainer';
 import VideoThumb from '../assets/img/thumbnail.png';
 import MyVideo from '../assets/video/video.mp4';
 import img from '../assets/img/bgLightMan.png'
