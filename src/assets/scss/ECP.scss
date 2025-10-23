@@ -1,7 +1,12 @@
 .ECP {
     &-container {
+        width: 90vw;
         display: flex;
+        margin: 0 auto;
         border: 1px solid #FFFF;
         background-color: #252532;
+    }
+    &__col {
+
     }
 }
