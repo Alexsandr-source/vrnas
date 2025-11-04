@@ -5,7 +5,8 @@ import man1 from '../assets/img/man1.png'
 import man2 from '../assets/img/man2.png'
 import man3 from '../assets/img/man3.png'
 import VideoPlayer from '../components/VideoPlayer';
-import ECP from '../components/ECPcontainer';
+import ECP from '../components/ECP';
+import AboutUs from '../components/AboutUs';
 import VideoThumb from '../assets/img/thumbnail.png';
 import MyVideo from '../assets/video/video.mp4';
 import '../assets/scss/Home.scss'
@@ -43,7 +44,12 @@ function Home() {
           </div>
           <img className="intro__image" src={normalMan} alt="normal man" />
         </section>
-        <ECP/>
+        <section>
+          <ECP/>
+        </section>
+        <section>
+          <AboutUs/>
+        </section>
       </main>
       <footer>
         
