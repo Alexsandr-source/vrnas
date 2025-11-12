@@ -6,7 +6,7 @@ function AboutUs() {
     return (
         <div className="AboutUs-container">
             <div className="AboutUs-col">
-                <img src={touchMan}/>
+                <img className="AboutUs-img" src={touchMan}/>
             </div>
             <div className="AboutUs-col">
                 <p className="AboutUs-title">ABOUT US</p>

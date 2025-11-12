@@ -2,13 +2,29 @@
     &-container {
         width: 90%;
         display: flex;
-
         margin: 0 auto;
+        margin-top: 120px;
+
+        grid-template-columns: 1fr 1fr;
     }
     &-col {
-
+        width: 50%;
+    }
+    &-img {
+        
     }
     &-title {
+        font-family: Chakra Petch;
+        font-weight: 500;
+        font-style: Medium;
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: 14%;
+        text-transform: uppercase;
+
+        background: linear-gradient(0deg, var(--purple10-color), var(--blue-color));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
 
         &-sub {
             font-family: Chakra Petch;
@@ -34,7 +50,6 @@
             font-weight: 400;
             font-style: Regular;
             font-size: 16px;
-            leading-trim: NONE;
             line-height: 28px;
             letter-spacing: 0%;
             vertical-align: bottom;
