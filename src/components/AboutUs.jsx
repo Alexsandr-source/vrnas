@@ -5,8 +5,8 @@ import "../assets/scss/AboutUs.scss"
 function AboutUs() {
     return (
         <div className="AboutUs-container">
-            <div className="AboutUs-col">
-                <img className="AboutUs-img" src={touchMan}/>
+            <div class="image-wrapper">
+                <img src={touchMan} alt="" />
             </div>
             <div className="AboutUs-col">
                 <p className="AboutUs-title">ABOUT US</p>

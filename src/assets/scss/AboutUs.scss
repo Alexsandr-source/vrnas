@@ -1,16 +1,58 @@
+.image-wrapper {
+    position: relative;      // родитель должен быть position: relative
+    display: inline-block;   // чтобы размер обёртки подстраивался под картинку
+
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0%;
+        left: 8%;
+        width: 84%;
+        height: 84%;
+
+        background: rgba(255, 255, 255, 0.06);
+        z-index: -2;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        background: radial-gradient(
+            ellipse 60% 40% at 40% 50%,
+            rgba(174, 0, 255, 0.4),
+            rgba(0, 60, 255, 0.1)
+        );
+
+        filter: blur(35px); /* свечение */
+        z-index: -1; /* между прямоугольником и картинкой */
+    }
+    
+    img {
+        display: block;   // убрать "дырку" снизу
+        position: relative;
+        z-index: 2;       // картинка выше фона
+    }
+}
+
 .AboutUs {
     &-container {
         width: 90%;
-        display: flex;
-        justify-content: center;
+        display: grid;
+        justify-content: space-between;
         margin: 0 auto;
         margin-top: 120px;
+        grid-template-columns: 1fr 1fr;
     }
     &-col {
-        width: 43%;
         position: relative;
         display: inline-block;
     }
+
     &-img {
         position: relative;
         z-index: 2;
@@ -27,6 +69,7 @@
             z-index: 1;
         }  
     }
+
     &-title {
         font-family: Chakra Petch;
         font-weight: 500;
