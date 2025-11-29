@@ -6,9 +6,9 @@
         content: "";
         position: absolute;
         bottom: 0%;
-        left: 8%;
-        width: 84%;
-        height: 84%;
+        left: -2%;
+        width: 64%;
+        height: 74%;
 
         background: rgba(255, 255, 255, 0.06);
         z-index: -2;
@@ -17,25 +17,22 @@
     &::after {
         content: "";
         position: absolute;
-        top: 0;
+        bottom: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
+        width: 80%;
+        height: 70%;
 
-        background: radial-gradient(
-            ellipse 60% 40% at 40% 50%,
-            rgba(174, 0, 255, 0.4),
-            rgba(0, 60, 255, 0.1)
-        );
+        background: linear-gradient(0deg, #003cff, #ae00ff);
+        border-radius: 14000px 0px 15000px 0px; /* МАГИЯ */
 
-        filter: blur(35px); /* свечение */
+        filter: blur(130px); /* свечение */
         z-index: -1; /* между прямоугольником и картинкой */
     }
     
     img {
-        display: block;   // убрать "дырку" снизу
+        display: block;
         position: relative;
-        z-index: 2;       // картинка выше фона
+        z-index: 2; // картинка выше фона
     }
 }
 
