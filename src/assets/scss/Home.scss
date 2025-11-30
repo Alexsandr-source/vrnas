@@ -122,6 +122,19 @@ body {
     background-size: 250px;
     background-repeat: no-repeat;
     background-position: left;
+
+    &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80%;
+    height: 70%;
+    background: linear-gradient(0deg, #003cff, #ae00ff);
+    border-radius: 14000px 0px 15000px 0px; /* МАГИЯ */
+    filter: blur(130px); /* свечение */
+    z-index: -1; /* между прямоугольником и картинкой */
+    }
   }
 }
 
