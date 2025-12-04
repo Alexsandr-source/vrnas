@@ -25,7 +25,6 @@ body {
   justify-items: center;
   grid-template-columns: 1fr 1fr;
 
-  
   &__content {
     max-width: 600px;
   }
@@ -117,23 +116,22 @@ body {
   }
   
   &__image {
-    width: 40vw;
-    background-image: url("../img/bgLightMan.png");
-    background-size: 250px;
-    background-repeat: no-repeat;
-    background-position: left;
+    top: 4px;
+    position: relative;
+    display: inline-block;
+    width: 80%;
 
     &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 80%;
-    height: 70%;
-    background: linear-gradient(0deg, #003cff, #ae00ff);
-    border-radius: 14000px 0px 15000px 0px; /* МАГИЯ */
-    filter: blur(130px); /* свечение */
-    z-index: -1; /* между прямоугольником и картинкой */
+      content: "";
+      position: absolute;
+      top: 10%;
+      left: 0;
+      width: 80%;
+      height: 70%;
+      background: linear-gradient(0deg, #1CC4F9, #FE69FE);
+      border-radius: 14000px 0px 15000px 0px; /* МАГИЯ */
+      filter: blur(130px); /* свечение */
+      z-index: -1; /* между прямоугольником и картинкой */
     }
   }
 }

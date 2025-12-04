@@ -42,7 +42,9 @@ function Home() {
               <VideoPlayer src={MyVideo} thumbnail={VideoThumb} />
             </div>
           </div>
-          <img className="intro__image" src={normalMan} alt="normal man" />
+          <div className="intro__image">
+            <img src={normalMan} alt="normal man" />
+          </div>
         </section>
         <section>
           <ECP/>
