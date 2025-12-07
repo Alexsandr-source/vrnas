@@ -40,11 +40,6 @@ const VideoPlayer = ({ src, thumbnail }) => {
 		updateButtonUI();
 	}
 
-
-
-
-
-
 	useEffect(() => {
 		const handleTimeUpdate = () => {
 			const { currentTime, duration } = videoPlayer.current;
@@ -62,11 +57,6 @@ const VideoPlayer = ({ src, thumbnail }) => {
 			}
 		};
 	}, []);
-
-
-
-
-
 
 	useEffect(() => {
 		const bar = progressLine.current;
