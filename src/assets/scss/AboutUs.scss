@@ -1,6 +1,6 @@
 .image-wrapper {
-    position: relative;      // родитель должен быть position: relative
-    display: inline-block;   // чтобы размер обёртки подстраивался под картинку
+    position: relative;
+    display: flex;
 
     &::before {
         content: "";
@@ -29,11 +29,6 @@
         z-index: -1; /* между прямоугольником и картинкой */
     }
     
-    img {
-        display: block;
-        position: relative;
-        z-index: 2; // картинка выше фона
-    }
 }
 
 .AboutUs {
@@ -180,9 +175,13 @@
     background-color: white;
     border-radius: 10px;
 }
-.video {
+.AboutUsVideo {
     position: relative;
-    z-index: 6;
+    bottom: 0px;
+    z-index: 4;
+    &-container {
+        position: relative;
+    }
     &-close {
         display: none;
     }

@@ -158,9 +158,9 @@ function AboutUs() {
         <div className="AboutUs-container">
             <div class="image-wrapper">
                 <img src={touchMan} alt="" />
-                <div className={`${isFixed ? "container" : ""}`}>
-                    <img ref={closeButton} className={`${isFixed ? "video-open" : "video-close"} close`} onClick={videoClose} src={closeIcon} alt="close"/>
-                    <div ref={video} className={`${isFixed ? "video_fixed" : "video"}`}>
+                <div className={`${isFixed ? "container" : "AboutUsVideo-container"}`}>
+                    <img ref={closeButton} className={`${isFixed ? "AboutUsVideo-open" : "AboutUsVideo-close"} close`} onClick={videoClose} src={closeIcon} alt="close"/>
+                    <div ref={video} className={`${isFixed ? "video_fixed" : "AboutUsVideo"}`}>
                         <video
                             ref={videoPlayer}
                             className={"video__player"}
