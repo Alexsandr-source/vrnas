@@ -136,9 +136,12 @@
 
 .com {
     position: relative;
-    padding-left: 47.5%;
+    padding-left: 42.5%;
     z-index: 999;
     & img {
+        border: 3px solid #FFFFFF;
+        border-radius: 50%;
+        padding: 6px 6px;
         width: 12px;
         height: 12px;
     }
@@ -176,8 +179,9 @@
     border-radius: 10px;
 }
 .AboutUsVideo {
-    position: relative;
-    bottom: 0px;
+    position: absolute;
+    bottom: -60px;
+    right: -15px;
     z-index: 4;
     &-container {
         position: relative;

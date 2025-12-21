@@ -5,7 +5,7 @@ import playFirst from "../assets/img/play.svg";
 import playIcon from "../assets/img/play.svg";
 import pauseIcon from "../assets/img/pause.svg";
 import closeIcon from "../assets/img/iconClose.png";
-import thumbnail from '../assets/img/thumbnail.png';
+import thumbnail from '../assets/img/thumbnail2.png';
 import src from '../assets/video/video.mp4';
 import "../assets/scss/AboutUs.scss"
 
