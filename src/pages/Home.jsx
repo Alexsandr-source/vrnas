@@ -7,6 +7,7 @@ import man3 from '../assets/img/man3.png'
 import VideoPlayer from '../components/VideoPlayer';
 import ECP from '../components/ECP';
 import AboutUs from '../components/AboutUs';
+import OurService from '../components/OurService';
 import VideoThumb from '../assets/img/thumbnail.png';
 import MyVideo from '../assets/video/video.mp4';
 import '../assets/scss/Home.scss'
@@ -51,6 +52,9 @@ function Home() {
         </section>
         <section>
           <AboutUs/>
+        </section>
+        <section>
+          <OurService/>
         </section>
       </main>
       <footer>
