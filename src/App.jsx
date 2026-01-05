@@ -9,7 +9,6 @@ import PricingPlan from './pages/PricingPlan';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TemsAndConfitions from './pages/TemsAndConditions';
 import FAQ from './pages/Faq';
-import './App.scss';
 
 function App() {
   return (
