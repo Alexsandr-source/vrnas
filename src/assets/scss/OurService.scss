@@ -1,10 +1,26 @@
 .OurService {
     &-container {
         width: 100%;
+        margin-top: 150px;
+    }
+    &-head {
         display: grid;
         align-items: start;
-        margin-top: 150px;
         grid-template-columns: 30% 70%;
+    }
+    &-blocks {
+        display: grid;
+        column-gap: 1%;
+        row-gap: 32px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    &-block {
+        background-color: #25253299;
+        &:nth-child(2) {
+        }
+        &:nth-child(3) {
+
+        }
     }
     &-title {
         font-family: Chakra Petch;
