@@ -10,17 +10,13 @@
     }
     &-blocks {
         display: grid;
-        column-gap: 1%;
-        row-gap: 32px;
         grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto;
+        column-gap: 17px;
+        row-gap: 15px;
     }
     &-block {
         background-color: #25253299;
-        &:nth-child(2) {
-        }
-        &:nth-child(3) {
-
-        }
     }
     &-title {
         font-family: Chakra Petch;
