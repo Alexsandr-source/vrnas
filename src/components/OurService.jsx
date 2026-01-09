@@ -30,52 +30,52 @@ function OurService() {
                         </p>
                     </div>
                     <div className="OurService__block">
-                        <img src={Img1} alt="" className="OurService__block-img" />
+                        <img src={Img2} alt="" className="OurService__block-img" />
                         <h2 className="OurService__block-title">
-                            VR Development
+                            VR Design
                         </h2>
                         <p className="OurService__block-text">
-                            From concept to creation, our team of VR developers will bring your vision to life.
+                            Our talented VR designers will create immersive and engaging environments that will captivate your audience.
                         </p>
                     </div>
                 </div>
                 <div className="OurService-content">
                     <div className="OurService__block">
-                        <img src={Img1} alt="" className="OurService__block-img" />
+                        <img src={Img3} alt="" className="OurService__block-img" />
                         <h2 className="OurService__block-title">
-                            VR Development
+                            VR Consulting
                         </h2>
                         <p className="OurService__block-text">
-                            From concept to creation, our team of VR developers will bring your vision to life.
+                            Our VR consultants will work with you to ensure that your VR experience meets your goals and exceeds your expectations.
                         </p>
                     </div>
                     <div className="OurService__block">
-                        <img src={Img1} alt="" className="OurService__block-img" />
+                        <img src={Img4} alt="" className="OurService__block-img" />
                         <h2 className="OurService__block-title">
-                            VR Development
+                            VR Games
                         </h2>
                         <p className="OurService__block-text">
-                            From concept to creation, our team of VR developers will bring your vision to life.
+                            We offer a wide selection of VR games that are suitable for players of all ages and skill levels.
                         </p>
                     </div>
                 </div>
                 <div className="OurService-content">
                     <div className="OurService__block">
-                        <img src={Img1} alt="" className="OurService__block-img" />
+                        <img src={Img5} alt="" className="OurService__block-img" />
                         <h2 className="OurService__block-title">
-                            VR Development
+                            VR Events
                         </h2>
                         <p className="OurService__block-text">
-                            From concept to creation, our team of VR developers will bring your vision to life.
+                            Make your next event unforgettable with our VR event services.
                         </p>
                     </div>
                     <div className="OurService__block">
-                        <img src={Img1} alt="" className="OurService__block-img" />
+                        <img src={Img6} alt="" className="OurService__block-img" />
                         <h2 className="OurService__block-title">
-                            VR Development
+                            VR Entertainment
                         </h2>
                         <p className="OurService__block-text">
-                            From concept to creation, our team of VR developers will bring your vision to life.
+                            reate a VR escape room, or offer VR experiences at a theme park, we have the expertise and experience to make it happen.
                         </p>
                     </div>
                 </div>
