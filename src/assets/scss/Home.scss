@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;700&display=swap');
 
 :root {
-  --linear-color: linear-gradient(270deg, var(--purple10-color), var(--blue-color));
   --purple10-color: #CA6AEB;
   --blue-color: #19B5F1;
+  --linear-color: linear-gradient(270deg, var(--purple10-color), var(--blue-color));
   --black100-color: #181818;
   --black50-color: #252532;
   --grey1-color: #B0B0B2;
@@ -12,13 +12,13 @@
 }
 
 body {
-  max-width: 1440px;
   margin: 0 auto;
   background-color: #18181B;
 }
 
 main {
-  width: 90%;
+  max-width: 90wv;
+  padding: 0 5%;
   margin: 0 auto;
 }
 
@@ -136,9 +136,9 @@ main {
       width: 80%;
       height: 70%;
       background: linear-gradient(0deg, #1CC4F9, #FE69FE);
-      border-radius: 14000px 0px 15000px 0px; /* МАГИЯ */
-      filter: blur(130px); /* свечение */
-      z-index: -1; /* между прямоугольником и картинкой */
+      border-radius: 140px 0px 150px 0px;
+      filter: blur(130px);
+      z-index: -1;
     }
   }
 }

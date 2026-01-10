@@ -9,6 +9,7 @@
         grid-template-columns: 30% 70%;
     }
     &-blocks {
+        margin-top: 50px;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         column-gap: 36px;
@@ -28,7 +29,11 @@
         border: 1px solid;
         border-image: linear-gradient(to right, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0))1;
         background-color: rgba(37, 37, 50, 0.6);
+        &-img {
+            margin-bottom: 48px;
+        }
         &-title {
+            margin-bottom: 12px;
             font-family: Chakra Petch;
             font-weight: 400;
             font-style: Regular;

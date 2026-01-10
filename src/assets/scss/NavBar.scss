@@ -25,14 +25,10 @@
     margin-top: 25px;
     display: grid;
     align-items: center;
-
-
-
     grid-template-columns: 1fr 1fr 1fr;
     &__nav {
       display: grid;
       width: 30vw;
-      padding: 0px;
       list-style: none;
       justify-items: center;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
