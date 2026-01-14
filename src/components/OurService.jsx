@@ -28,6 +28,9 @@ function OurService() {
                         <p className="OurService__block-text">
                             From concept to creation, our team of VR developers will bring your vision to life.
                         </p>
+                        <button className="OurService__block-button">
+                            LEARN MORE
+                        </button>
                     </div>
                     <div className="OurService__block">
                         <img src={Img2} alt="" className="OurService__block-img" />
@@ -37,6 +40,9 @@ function OurService() {
                         <p className="OurService__block-text">
                             Our talented VR designers will create immersive and engaging environments that will captivate your audience.
                         </p>
+                        <button className="OurService__block-button">
+                            LEARN MORE
+                        </button>
                     </div>
                 </div>
                 <div className="OurService-content">
@@ -48,6 +54,9 @@ function OurService() {
                         <p className="OurService__block-text">
                             Our VR consultants will work with you to ensure that your VR experience meets your goals and exceeds your expectations.
                         </p>
+                        <button className="OurService__block-button">
+                            LEARN MORE
+                        </button>
                     </div>
                     <div className="OurService__block">
                         <img src={Img4} alt="" className="OurService__block-img" />
@@ -57,6 +66,9 @@ function OurService() {
                         <p className="OurService__block-text">
                             We offer a wide selection of VR games that are suitable for players of all ages and skill levels.
                         </p>
+                        <button className="OurService__block-button">
+                            LEARN MORE
+                        </button>
                     </div>
                 </div>
                 <div className="OurService-content">
@@ -68,6 +80,9 @@ function OurService() {
                         <p className="OurService__block-text">
                             Make your next event unforgettable with our VR event services.
                         </p>
+                        <button className="OurService__block-button">
+                            LEARN MORE
+                        </button>
                     </div>
                     <div className="OurService__block">
                         <img src={Img6} alt="" className="OurService__block-img" />
@@ -77,6 +92,9 @@ function OurService() {
                         <p className="OurService__block-text">
                             reate a VR escape room, or offer VR experiences at a theme park, we have the expertise and experience to make it happen.
                         </p>
+                        <button className="OurService__block-button">
+                            LEARN MORE
+                        </button>
                     </div>
                 </div>
             </div>
