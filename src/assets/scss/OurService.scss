@@ -35,6 +35,11 @@
         transition: .2s;
         &:hover {
             border-image: var(--linear-color);
+            & .OurService__block-button {
+                display: block;
+                bottom: 10%;
+                left: 30%;
+            }
             &::before {
                 content: "";
                 position: absolute;
@@ -43,34 +48,33 @@
                 width: 140%;
                 height: 120px;
                 
-                background: radial-gradient(
-                    ellipse at center,
-                    rgba(174, 0, 255, 0.4),
-                    rgba(0, 60, 255, 0.25),
-                    transparent 70%
-                    );
+                background: linear-gradient(0deg, rgba(37, 37, 50, 0) 50%, rgba(37, 37, 50, 0.91) 53.06%, #000000 100%);
                     
-                    filter: blur(40px);
-                    pointer-events: none;
-                }
+                filter: blur(40px);
+                pointer-events: none;
             }
-            &-button {
-                margin-top: 20px;
-                padding: 18px 28px;
-                font-family: Chakra Petch;
-                font-weight: 700;
-                font-style: Bold;
-                font-size: 14px;
-                line-height: 14px;
-                letter-spacing: 1.5px;
-                text-align: center;
-                vertical-align: middle;
-                text-transform: uppercase;
-                
-                cursor: pointer;
-                background-color: #252532;
-                border-image: var(--linear-color);
-                color:#FFF;
+        }
+        &-button {
+            position: absolute;
+            display: none;
+            margin-top: 20px;
+            padding: 18px 28px;
+
+            font-family: Chakra Petch;
+            font-weight: 700;
+            font-style: Bold;
+            font-size: 14px;
+            line-height: 14px;
+            letter-spacing: 1.5px;
+            text-align: center;
+            vertical-align: middle;
+            text-transform: uppercase;
+            
+            transition: .2s;
+            cursor: pointer;
+            background-color: #252532;
+            border-image: var(--linear-color);
+            color:#FFF;
         }
         &-img {
             margin-bottom: 48px;
