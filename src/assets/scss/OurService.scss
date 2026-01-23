@@ -109,9 +109,11 @@
         letter-spacing: 14%;
         text-transform: uppercase;
 
+        display: inline-flex;
         background: linear-gradient(90deg, var(--blue-color), var(--purple10-color));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+
         &-sub {
             font-family: Chakra Petch;
             font-weight: 600;

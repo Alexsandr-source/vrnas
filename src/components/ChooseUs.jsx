@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import touchMan from '../assets/img/touchMan.png';
+import manDefense from '../assets/img/manDefense.png';
 import playFirst from "../assets/img/play.svg";
 import playIcon from "../assets/img/play.svg";
 import pauseIcon from "../assets/img/pause.svg";
@@ -164,7 +164,7 @@ function ChooseUs() {
             </div>
             <div className="ChooseUs-col">
                 <div className="image-wrapper">
-                    <img src={touchMan} alt="" />
+                    <img src={manDefense} alt="" />
                     <div className={`${isFixed ? "container" : "AboutUsVideo-container"}`}>
                         <img ref={closeButton} className={`${isFixed ? "AboutUsVideo-open" : "AboutUsVideo-close"} close`} onClick={videoClose} src={closeIcon} alt="close"/>
                         <div ref={video} className={`${isFixed ? "video_fixed" : "AboutUsVideo"}`}>
