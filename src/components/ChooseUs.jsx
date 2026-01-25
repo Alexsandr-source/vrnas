@@ -10,6 +10,8 @@ import "../assets/scss/ChooseUs.scss"
 
 function ChooseUs() {
     const [isFixed, setIsFixed] = useState(false);
+    const [activeIndex, setActiveIndex] = useState(null);
+
     const com = useRef(null),
         videoHub = useRef(null),
         video = useRef(null),
@@ -160,7 +162,42 @@ function ChooseUs() {
             <div className="ChooseUs-col">
                 <p className="ChooseUs-title">WHY CHOOSE US</p>
                 <h1 className="ChooseUs-title-sub">Why Choose Us for Your VR Needs</h1>
-                <p className="ChooseUs-text">We use the latest VR hardware and software to create high-quality VR experiences that are accessible and affordable. Our goal is to provide exceptional customer service and support, and our team is always available to answer any questions and address any concerns you may have.</p>
+            <div className="dropdown">
+                {[
+                    {
+                    title: "Passionate and Experienced Team",
+                    text: "We are proud of our team of VR experts..."
+                    },
+                    {
+                    title: "Customized Solutions",
+                    text: "Every VR experience should be unique..."
+                    },
+                    {
+                    title: "Exceptional Customer Service",
+                    text: "From consultation to delivery..."
+                    }
+                ].map((item, index) => (
+                    <div className="dropdown-item" key={index}>
+                    <button
+                        className="dropdown-link"
+                        onClick={() =>
+                        setActiveIndex(activeIndex === index ? null : index)
+                        }
+                    >
+                        {item.title}
+                    </button>
+
+                    <div
+                        className={`dropdown-text ${
+                        activeIndex === index ? "open" : ""
+                        }`}
+                    >
+                        {item.text}
+                    </div>
+                    </div>
+                ))}
+            </div>
+
             </div>
             <div className="ChooseUs-col">
                 <div className="image-wrapper">
