@@ -159,44 +159,44 @@ function ChooseUs() {
 
     return (
         <div className="ChooseUs-container">
-            <div className="ChooseUs-col">
+            <div className="ChooseUs-col ChooseUs-content">
                 <p className="ChooseUs-title">WHY CHOOSE US</p>
                 <h1 className="ChooseUs-title-sub">Why Choose Us for Your VR Needs</h1>
-            <div className="dropdown">
-                {[
-                    {
-                    title: "Passionate and Experienced Team",
-                    text: "We are proud of our team of VR experts..."
-                    },
-                    {
-                    title: "Customized Solutions",
-                    text: "Every VR experience should be unique..."
-                    },
-                    {
-                    title: "Exceptional Customer Service",
-                    text: "From consultation to delivery..."
-                    }
-                ].map((item, index) => (
-                    <div className="dropdown-item" key={index}>
-                    <button
-                        className="dropdown-link"
-                        onClick={() =>
-                        setActiveIndex(activeIndex === index ? null : index)
+                <div className="ChooseUs-dropdown">
+                    {[
+                        {
+                        title: "Passionate and Experienced Team",
+                        text: "We are proud of our team of VR experts who are passionate about VR and dedicated to delivering the highest quality work. Our team consists of experienced VR developers, designers, and technicians who have a proven track record of creating immersive and engaging VR experiences."
+                        },
+                        {
+                        title: "Customized Solutions",
+                        text: "We are proud of our team of VR experts who are passionate about VR and dedicated to delivering the highest quality work. Our team consists of experienced VR developers, designers, and technicians who have a proven track record of creating immersive and engaging VR experiences."
+                        },
+                        {
+                        title: "Exceptional Customer Service",
+                        text: "We are proud of our team of VR experts who are passionate about VR and dedicated to delivering the highest quality work. Our team consists of experienced VR developers, designers, and technicians who have a proven track record of creating immersive and engaging VR experiences."
                         }
-                    >
-                        {item.title}
-                    </button>
+                    ].map((item, index) => (
+                        <div className="ChooseUs-dropdown-item" key={index}>
+                        <button
+                            className="ChooseUs-dropdown-link"
+                            onClick={() =>
+                            setActiveIndex(activeIndex === index ? null : index)
+                            }
+                        >
+                            {item.title}
+                        </button>
 
-                    <div
-                        className={`dropdown-text ${
-                        activeIndex === index ? "open" : ""
-                        }`}
-                    >
-                        {item.text}
-                    </div>
-                    </div>
-                ))}
-            </div>
+                        <div
+                            className={`ChooseUs-dropdown-text ${
+                            activeIndex === index ? "open" : ""
+                            }`}
+                        >
+                            {item.text}
+                        </div>
+                        </div>
+                    ))}
+                </div>
 
             </div>
             <div className="ChooseUs-col">
