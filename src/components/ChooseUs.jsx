@@ -5,6 +5,7 @@ import playIcon from "../assets/img/play.svg";
 import pauseIcon from "../assets/img/pause.svg";
 import closeIcon from "../assets/img/iconClose.png";
 import thumbnail from '../assets/img/thumbnail3.png';
+import chooseUsArrow from "../assets/img/chooseUsArrow.svg"
 import src from '../assets/video/video.mp4';
 import "../assets/scss/ChooseUs.scss"
 
@@ -162,7 +163,7 @@ function ChooseUs() {
             <div className="ChooseUs-col ChooseUs-content">
                 <p className="ChooseUs-title">WHY CHOOSE US</p>
                 <h1 className="ChooseUs-title-sub">Why Choose Us for Your VR Needs</h1>
-                <div className="ChooseUs-dropdown">
+                <div className="ChooseUs__dropdown">
                     {[
                         {
                         title: "Passionate and Experienced Team",
@@ -177,23 +178,30 @@ function ChooseUs() {
                         text: "We are proud of our team of VR experts who are passionate about VR and dedicated to delivering the highest quality work. Our team consists of experienced VR developers, designers, and technicians who have a proven track record of creating immersive and engaging VR experiences."
                         }
                     ].map((item, index) => (
-                        <div className="ChooseUs-dropdown-item" key={index}>
-                        <button
-                            className="ChooseUs-dropdown-link"
-                            onClick={() =>
-                            setActiveIndex(activeIndex === index ? null : index)
-                            }
-                        >
-                            {item.title}
-                        </button>
+                        <div className="ChooseUs__dropdown-item" key={index}>
+                            <button
+                                className="ChooseUs__dropdown-link"
+                                onClick={() =>
+                                    setActiveIndex(
+                                        activeIndex === index ? null : index
+                                    )
+                                }
+                            >
+                                {item.title}
+                                <img
+                                    className={`ChooseUs__dropdown-img ${
+                                    activeIndex === index ? "open" : ""
+                                }`}
+                                    src={chooseUsArrow}
+                                />
+                            </button>
 
-                        <div
-                            className={`ChooseUs-dropdown-text ${
-                            activeIndex === index ? "open" : ""
-                            }`}
-                        >
-                            {item.text}
-                        </div>
+                            <div
+                                className={`ChooseUs__dropdown-text 
+                                ${activeIndex === index ? "open" : ""}`}
+                            >
+                                {item.text}
+                            </div>
                         </div>
                     ))}
                 </div>
