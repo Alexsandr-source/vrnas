@@ -1,10 +1,9 @@
 import { useEffect, useState, useRef } from "react";
-import manDefense from '../assets/img/manDefense.png';
 import playFirst from "../assets/img/play.svg";
 import playIcon from "../assets/img/play.svg";
 import pauseIcon from "../assets/img/pause.svg";
 import closeIcon from "../assets/img/iconClose.png";
-import thumbnail from '../assets/img/thumbnail3.png';
+import thumbnail from '../assets/img/HowStartedImg.png';
 import src from '../assets/video/video.mp4';
 import "../assets/scss/HowStarted.scss"
 
@@ -151,14 +150,13 @@ function HowStarted() {
 
     return (
         <div className="HowStarted-container">
+            <h1 className="HowStarted-title">HOW TO GET STARTED</h1>
+            <h2 className="HowStarted-title-sub">Bringing Your Virtual Reality Dreams to Life</h2>
             <div className="HowStarted-content">
-                <h1 className="HowStarted-title">HOW TO GET STARTED</h1>
-                <h2 className="HowStarted-title-sub">Bringing Your Virtual Reality Dreams to Life</h2>
-                <div className="image-wrapper">
-                    <img src={manDefense} alt="" />
-                    <div className={`${isFixed ? "container" : "AboutUsVideo-container"}`}>
-                        <img ref={closeButton} className={`${isFixed ? "AboutUsVideo-open" : "AboutUsVideo-close"} close`} onClick={videoClose} src={closeIcon} alt="close"/>
-                        <div ref={video} className={`${isFixed ? "video_fixed" : "AboutUsVideo"}`}>
+                <div className="HowStarted-wrapper">
+                    <div className={`${isFixed ? "container" : "HowStarted-video-container"}`}>
+                        <img ref={closeButton} className={`${isFixed ? "HowStarted-video-open" : "HowStarted-video-close"} close`} onClick={videoClose} src={closeIcon} alt="close"/>
+                        <div ref={video} className={`${isFixed ? "video_fixed" : "HowStarted-video"}`}>
                             <video
                                 ref={videoPlayer}
                                 className={"video__player"}
@@ -169,12 +167,12 @@ function HowStarted() {
                             ></video>
                             <img 
                                 ref={videoThumbnail} 
-                                className="thumbnail" 
+                                className="HowStarted-video-thumbnail" 
                                 src={thumbnail} 
                                 alt=""
                             />
-                            <div ref={com} className="com" onClick={videoStart}>
-                                <img src={playFirst} alt="play" />
+                            <div ref={com} className="HowStarted-video-com" onClick={videoStart}>
+                                <img className="HowStarted-video-com-button" src={playFirst} alt="play" />
                             </div>
                             <div ref={videoHub} className="video__hud">
                                 <div
@@ -194,17 +192,17 @@ function HowStarted() {
                                         ref={progressLine}
                                         className="video__hud__element video__hud__progress_line"
                                     >
-                                        <div ref={progressFill} className="progress-fill"></div>
+                                        <div ref={progressFill} className="HowStarted-video-progress-fill"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <button className="HowStarted-button">
-                    GET STARTED
-                </button>
             </div>
+            <button className="HowStarted-button">
+                GET STARTED
+            </button>
         </div>
     )
 }

@@ -46,6 +46,7 @@ main {
   }
   
   &__description {
+    margin-top: 12px;
     width: 74%;
     font-family: Chakra Petch;
     font-weight: 300;
@@ -58,6 +59,7 @@ main {
   }
   
   &__button {
+    margin-top: 32px;
     font-family: Chakra Petch;
     font-weight: 700;
     font-style: Bold;
@@ -81,6 +83,7 @@ main {
   }
   
   &__bottom {
+    margin-top: 42px;
     height: 140px;
     display: flex;
     align-items: center;

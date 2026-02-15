@@ -156,7 +156,7 @@ function AboutUs() {
 
     return (
         <div className="AboutUs-container">
-            <div class="image-wrapper">
+            <div class="AboutUs-wrapper">
                 <img src={touchMan} alt="" />
                 <div className={`${isFixed ? "container" : "AboutUsVideo-container"}`}>
                     <img ref={closeButton} className={`${isFixed ? "AboutUsVideo-open" : "AboutUsVideo-close"} close`} onClick={videoClose} src={closeIcon} alt="close"/>

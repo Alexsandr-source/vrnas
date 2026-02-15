@@ -9,6 +9,7 @@ import ECP from '../components/ECP';
 import AboutUs from '../components/AboutUs';
 import OurService from '../components/OurService';
 import ChooseUs from '../components/ChooseUs';
+import HowStarted from '../components/HowStarted';
 import VideoThumb from '../assets/img/thumbnail.png';
 import MyVideo from '../assets/video/video.mp4';
 import '../assets/scss/Home.scss'
@@ -59,6 +60,9 @@ function Home() {
         </section>
         <section>
           <ChooseUs/>
+        </section>
+        <section>
+          <HowStarted/>
         </section>
       </main>
       <footer>
