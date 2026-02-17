@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import playFirst from "../assets/img/play.svg";
+import playFirst from "../assets/img/howStartedButton.png";
 import playIcon from "../assets/img/play.svg";
 import pauseIcon from "../assets/img/pause.svg";
 import closeIcon from "../assets/img/iconClose.png";
@@ -145,7 +145,7 @@ function HowStarted() {
     }
     useEffect(() => {
         const width = videoThumbnail.current.offsetWidth;
-        com.current.style.bottom = `${width * 0.4}px`;
+        com.current.style.bottom = `${width * 0.26}px`;
     }, []);
 
     return (
