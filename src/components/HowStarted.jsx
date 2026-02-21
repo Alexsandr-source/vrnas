@@ -23,22 +23,24 @@ function HowStarted() {
     
     function videoStart() {
         setIsFixed(prev => !prev)
-        com.current.style.visibility = "hidden";
-        videoThumbnail.current.style.visibility = "hidden"
+        com.current.style.display = "none";
+        videoThumbnail.current.style.display = "none"
         videoHub.current.style.display = "flex";
         videoPlayer.current.style.display = "flex";
+        videoPlayer.current.style.width = videoThumbnail.current.offsetWidth;
+        videoPlayer.current.style.height = videoThumbnail.current.offsetHeight;
         videoPlayer.current.play();
-        videoPlayer.current.classList.toggle("video__player-open");
+        videoPlayer.current.classList.toggle("HowStartedVideo__player-open");
         updateButtonUI();
     }
     function videoClose() {
         setIsFixed(prev => !prev)
-        com.current.style.visibility = "visible";
-        videoThumbnail.current.style.visibility = "visible";
+        com.current.style.display = "block";
+        videoThumbnail.current.style.display = "block";
         videoHub.current.style.display = "none";
         videoPlayer.current.style.display = "none";
         videoPlayer.current.pause();
-        videoPlayer.current.classList.toggle("video__player-open");
+        videoPlayer.current.classList.toggle("HowStartedVideo__player-open");
         updateButtonUI();
     }
     useEffect(() => {
@@ -126,11 +128,11 @@ function HowStarted() {
         if (videoPlayer.current.paused) {
             actionImage.current.src = playIcon;
             actionButton.current.className =
-                "video__hud__element video__hud__action video__hud__action_play";
+                "HowStartedVideo__hud__element HowStartedVideo__hud__action HowStartedVideo__hud__action_play";
         } else {
             actionImage.current.src = pauseIcon;
             actionButton.current.className =
-                "video__hud__element video__hud__action video__hud__action_pause";
+                "HowStartedVideo__hud__element HowStartedVideo__hud__action HowStartedVideo__hud__action_pause";
         }
     }
     function videoAct() {
@@ -154,12 +156,11 @@ function HowStarted() {
             <h2 className="HowStarted-title-sub">Bringing Your Virtual Reality Dreams to Life</h2>
             <div className="HowStarted-content">
                 <div className="HowStarted-wrapper">
-                    <div className={`${isFixed ? "container" : "HowStarted-video-container"}`}>
-                        <img ref={closeButton} className={`${isFixed ? "HowStarted-video-open" : "HowStarted-video-close"} close`} onClick={videoClose} src={closeIcon} alt="close"/>
-                        <div ref={video} className={`${isFixed ? "video_fixed" : "HowStarted-video"}`}>
+                    <div className="HowStarted-video-container">
+                        <div ref={video} className="HowStarted-video">
                             <video
                                 ref={videoPlayer}
-                                className={"video__player"}
+                                className={"HowStartedVideo__player"}
                                 onClick={videoAct}
                                 src={src}
                                 poster={thumbnail}
@@ -174,23 +175,23 @@ function HowStarted() {
                             <div ref={com} className="HowStarted-video-com" onClick={videoStart}>
                                 <img className="HowStarted-video-com-button" src={playFirst} alt="play" />
                             </div>
-                            <div ref={videoHub} className="video__hud">
+                            <div ref={videoHub} className="HowStartedVideo__hud">
                                 <div
                                     ref={actionButton}
-                                    className="video__hud__element video__hud__action video__hud__action_play"
+                                    className="HowStartedVideo__hud__element HowStartedVideo__hud__action HowStartedVideo__hud__action_play"
                                     onClick={videoAct}
                                 >
                                     <img
                                         ref={actionImage}
-                                        className="video__hud__action_img"
+                                        className="HowStartedVideo__hud__action_img"
                                         src={playIcon}
                                         alt="action button"
                                     />
                                 </div>
-                                <div className="video__hud__element video__hud__progress">
+                                <div className="HowStartedVideo__hud__element HowStartedVideo__hud__progress">
                                     <div
                                         ref={progressLine}
-                                        className="video__hud__element video__hud__progress_line"
+                                        className="HowStartedVideo__hud__element HowStartedVideo__hud__progress_line"
                                     >
                                         <div ref={progressFill} className="HowStarted-video-progress-fill"></div>
                                     </div>

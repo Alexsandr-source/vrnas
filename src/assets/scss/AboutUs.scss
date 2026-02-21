@@ -173,24 +173,6 @@
     margin:0;
     border-radius: 6px;
 }
-.container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 5;
-    background-color: rgba(0,0,0,.8);
-}
-
-.video_fixed {
-  position: fixed;
-  top: 25vh;
-  left: 25vw;
-  width: 50vw;
-  height: 50vh;
-  z-index: 6;
-}
 .close {
     background-color: white;
     border-radius: 10px;
