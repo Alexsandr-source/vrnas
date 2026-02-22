@@ -2,13 +2,11 @@ import { useEffect, useState, useRef } from "react";
 import playFirst from "../assets/img/howStartedButton.png";
 import playIcon from "../assets/img/play.svg";
 import pauseIcon from "../assets/img/pause.svg";
-import closeIcon from "../assets/img/iconClose.png";
 import thumbnail from '../assets/img/HowStartedImg.png';
 import src from '../assets/video/video.mp4';
 import "../assets/scss/HowStarted.scss"
 
 function HowStarted() {
-    const [isFixed, setIsFixed] = useState(false);
 
     const com = useRef(null),
         videoHub = useRef(null),
@@ -19,27 +17,18 @@ function HowStarted() {
         actionButton = useRef(null),
         actionImage = useRef(null),
         videoThumbnail = useRef(null),
-        closeButton = useRef(null);
+        thumbnail = {".HowStarted-video-thumbnail"},
+        thumbnailWidth = thumbnail.current.offsetWidth,
+        thumbnailHeight = thumbnail.current.offsetHeight;
     
     function videoStart() {
-        setIsFixed(prev => !prev)
         com.current.style.display = "none";
         videoThumbnail.current.style.display = "none"
         videoHub.current.style.display = "flex";
         videoPlayer.current.style.display = "flex";
-        videoPlayer.current.style.width = videoThumbnail.current.offsetWidth;
-        videoPlayer.current.style.height = videoThumbnail.current.offsetHeight;
+        videoPlayer.current.style.width = thumbnailWidth;
+        videoPlayer.current.style.height = thumbnailHeight;
         videoPlayer.current.play();
-        videoPlayer.current.classList.toggle("HowStartedVideo__player-open");
-        updateButtonUI();
-    }
-    function videoClose() {
-        setIsFixed(prev => !prev)
-        com.current.style.display = "block";
-        videoThumbnail.current.style.display = "block";
-        videoHub.current.style.display = "none";
-        videoPlayer.current.style.display = "none";
-        videoPlayer.current.pause();
         videoPlayer.current.classList.toggle("HowStartedVideo__player-open");
         updateButtonUI();
     }
