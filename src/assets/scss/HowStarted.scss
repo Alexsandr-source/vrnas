@@ -30,6 +30,8 @@
     }
     &-video {
         width: 80vw;
+        height: 35vw;
+
         &-container {
             position: relative;
         }
@@ -45,70 +47,6 @@
             border-radius: 6px;
             &-open {
                 width: 100%;
-            }
-        }
-        &__hud {
-            position: relative;
-            bottom: 150px;
-            width: 100%;
-            display: none;
-            justify-content: space-between;
-            align-items: center;
-            margin:0;
-            padding:1px;
-            background-color: #1E212C;
-
-            &__element {
-                cursor:pointer;
-                display:inline-block;
-                vertical-align:middle;
-                height:30px;
-            }
-            &__action {
-                width:30px;
-                &_play {
-                    display: inline-flex;
-                    align-items: center;
-                    justify-content: center;
-                    width: 2.2vmax;
-                    height: 2.2vmax;
-                    background-color: var(--accent-color);
-                    border-radius: 100%;
-                    cursor: pointer;
-                    & img {
-                        width: 1vmax;
-                        height: 1vmax;
-                    }
-                }
-                &_pause {
-                    display: inline-flex;
-                    align-items: center;
-                    justify-content: center;
-                    width: 2.2vmax;
-                    height: 2.2vmax;
-                    background-color: var(--accent-color);
-                    border-radius: 100%;
-                }
-                &_img {
-                    width: 1.5vmax;
-                    height: 1.5vmax;
-                }
-            }
-            &__curr_time {
-                color: #1E212C;
-            }
-            &__duration {
-                color: #1E212C;
-            }
-            &__progress {
-                width: 90%;
-                border-radius: 5px;
-                background-color: #1E212C;
-                overflow: hidden;
-                &_line {
-                    width: 100%;
-                    background-color: var(--accent-color);
-                }
             }
         }
         &-com {
@@ -134,7 +72,8 @@
             transition: width 0.1s linear;
         }
         &-thumbnail {
-            width: 100%;
+            width: 80vw;
+            height: 35vw;
             margin:0;
             border-radius: 6px;
         }
@@ -165,6 +104,7 @@
         }
     }
     &-button {
+        margin-top: 48px;
         padding: 18px 38px;
 
         font-family: Chakra Petch;
@@ -195,14 +135,21 @@
     &__player {
         display: none;
         width: 100%;
+        height: 100%;
         margin:0;
         border-radius: 6px;
+        &-open {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
     }
     &__hud {
+        display: none;
         position: relative;
         bottom: 170px;
         width: 96%;
-        justify-content: space-between;
         align-items: center;
         margin:0 auto;
         padding:1px;

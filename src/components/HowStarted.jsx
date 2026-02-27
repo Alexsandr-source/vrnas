@@ -9,25 +9,21 @@ import "../assets/scss/HowStarted.scss"
 function HowStarted() {
 
     const com = useRef(null),
-        videoHub = useRef(null),
         video = useRef(null),
         videoPlayer = useRef(null),
         progressLine = useRef(null),
         progressFill = useRef(null),
         actionButton = useRef(null),
+        videoHub = useRef(null),
         actionImage = useRef(null),
-        videoThumbnail = useRef(null),
-        thumbnail = {".HowStarted-video-thumbnail"},
-        thumbnailWidth = thumbnail.current.offsetWidth,
-        thumbnailHeight = thumbnail.current.offsetHeight;
+        videoThumbnail = useRef(null);
     
     function videoStart() {
         com.current.style.display = "none";
         videoThumbnail.current.style.display = "none"
-        videoHub.current.style.display = "flex";
         videoPlayer.current.style.display = "flex";
-        videoPlayer.current.style.width = thumbnailWidth;
-        videoPlayer.current.style.height = thumbnailHeight;
+        videoHub.current.style.display = "flex";
+        videoHub.current.style.bottom = "60px";
         videoPlayer.current.play();
         videoPlayer.current.classList.toggle("HowStartedVideo__player-open");
         updateButtonUI();
@@ -126,7 +122,6 @@ function HowStarted() {
     }
     function videoAct() {
         if (videoPlayer.current.paused) {
-            videoHub.current.style.display = "flex";
             com.current.style.display = "none";
             videoPlayer.current.play();
         } else {
@@ -164,7 +159,9 @@ function HowStarted() {
                             <div ref={com} className="HowStarted-video-com" onClick={videoStart}>
                                 <img className="HowStarted-video-com-button" src={playFirst} alt="play" />
                             </div>
-                            <div ref={videoHub} className="HowStartedVideo__hud">
+                            <div className="HowStartedVideo__hud"
+                                ref={videoHub}
+                            >
                                 <div
                                     ref={actionButton}
                                     className="HowStartedVideo__hud__element HowStartedVideo__hud__action HowStartedVideo__hud__action_play"
