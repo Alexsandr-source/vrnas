@@ -145,9 +145,33 @@
             border-radius: 12px;
         }
     }
+    &__info {
+        position: absolute;
+        left: 30px;
+        color: white;
+        z-index: 2;
+
+        &-title {
+            font-family: Chakra Petch;
+            font-weight: 500;
+            font-style: Medium;
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 0%;
+            text-align: center;
+        }
+        &-text {
+            font-family: Chakra Petch;
+            font-weight: 500;
+            font-style: Medium;
+            font-size: 36px;
+            line-height: 44px;
+            letter-spacing: -2%;
+        }
+    }
     &__hud {
         display: none;
-        position: relative;
+        position: absolute;
         bottom: 170px;
         width: 96%;
         align-items: center;

@@ -162,17 +162,25 @@ function HowStarted() {
                             <div className="HowStartedVideo__hud"
                                 ref={videoHub}
                             >
+                                <div className="HowStartedVideo__info">
+                                    <h3 className="HowStartedVideo__info-title">
+                                        VR Service
+                                    </h3>
+                                    <p className="HowStartedVideo__info-text">
+                                        VR Service
+                                    </p>
+                                </div>
                                 <div
                                     ref={actionButton}
                                     className="HowStartedVideo__hud__element HowStartedVideo__hud__action HowStartedVideo__hud__action_play"
                                     onClick={videoAct}
                                 >
-                                    <img
-                                        ref={actionImage}
-                                        className="HowStartedVideo__hud__action_img"
-                                        src={playIcon}
-                                        alt="action button"
-                                    />
+                                <img
+                                    ref={actionImage}
+                                    className="HowStartedVideo__hud__action_img"
+                                    src={playIcon}
+                                    alt="action button"
+                                />
                                 </div>
                                 <div className="HowStartedVideo__hud__element HowStartedVideo__hud__progress">
                                     <div
