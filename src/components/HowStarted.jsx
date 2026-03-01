@@ -170,24 +170,26 @@ function HowStarted() {
                                         VR Service
                                     </p>
                                 </div>
-                                <div
-                                    ref={actionButton}
-                                    className="HowStartedVideo__hud__element HowStartedVideo__hud__action HowStartedVideo__hud__action_play"
-                                    onClick={videoAct}
-                                >
-                                <img
-                                    ref={actionImage}
-                                    className="HowStartedVideo__hud__action_img"
-                                    src={playIcon}
-                                    alt="action button"
-                                />
-                                </div>
-                                <div className="HowStartedVideo__hud__element HowStartedVideo__hud__progress">
+                                <div className="HowStartedVideo__hud-bar">
                                     <div
-                                        ref={progressLine}
-                                        className="HowStartedVideo__hud__element HowStartedVideo__hud__progress_line"
+                                        ref={actionButton}
+                                        className="HowStartedVideo__hud__element HowStartedVideo__hud__action HowStartedVideo__hud__action_play"
+                                        onClick={videoAct}
                                     >
-                                        <div ref={progressFill} className="HowStarted-video-progress-fill"></div>
+                                        <img
+                                            ref={actionImage}
+                                            className="HowStartedVideo__hud__action_img"
+                                            src={playIcon}
+                                            alt="action button"
+                                        />
+                                    </div>
+                                    <div className="HowStartedVideo__hud__element HowStartedVideo__hud__progress">
+                                        <div
+                                            ref={progressLine}
+                                            className="HowStartedVideo__hud__element HowStartedVideo__hud__progress_line"
+                                        >
+                                            <div ref={progressFill} className="HowStarted-video-progress-fill"></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
