@@ -167,7 +167,7 @@ function HowStarted() {
                                         VR Service
                                     </h3>
                                     <p className="HowStartedVideo__info-text">
-                                        VR Service
+                                        How to get started
                                     </p>
                                 </div>
                                 <div className="HowStartedVideo__hud-bar">
