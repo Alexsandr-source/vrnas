@@ -1,32 +1,25 @@
-import "../assets/scss/Testimonial.scss"
+import man from "../assets/img/GoJo.png";
+import "../assets/scss/Testimonial.scss";
 
 function Testimonial() {
 
     return (
-        <div className="testimonial">
+        <div className="Testimonial">
+            <div className="Testimonial-container">
+                <div className="inner-orbit">
+                    <img src={man} alt="man" />
+                    <div className="middle-orbit">
+                        <div className="middle-orbit-cirlces"></div>
 
-            <h2 className="title">What Our Clients Are Saying</h2>
+                        <div className="outer-orbit">
+                            <div className="outer-orbit-cirlces"></div>
+                        </div>
 
-            <div className="orbit-container">
+                    </div>
 
-                <div className="center">
-                    {/* <img src={}/> */}
+
                 </div>
-
-                <div className="orbit orbit1">
-                    <div className="avatar"></div>
-                </div>
-
-                <div className="orbit orbit2">
-                    <div className="avatar"></div>
-                </div>
-
-                <div className="orbit orbit3">
-                    <div className="avatar"></div>
-                </div>
-
             </div>
-
         </div>
     )
 }
