@@ -4,110 +4,124 @@
 
     &-container {
         position: relative;
-        margin: 0 auto;
         margin-top: 100px;
-        top: 25px;
-        left: 25px;
-        height: 700px;
-        width: 700px;
+        width:700px;
+        height:700px;
+
         &::after {
-            // content: "";
+            content: "";
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 120%;
-            height: 100%;
+            width: 80%;
+            height: 80%;
     
             background: linear-gradient(0deg, #1CC4F9, #FE69FE);
             border-radius: 16000px 0px 15000px 0px;
     
-            filter: blur(110px);
+            filter: blur(130px);
             z-index: -1;
         }
     }
 }
 
+.center-circle{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
 
+  width:200px;
+  height:200px;
+  border-radius:50%;
+  overflow:hidden;
+  background-color: rgba(255, 255, 255, 0.17);
+  background-image: url(../img/GoJo.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-/* ---------- Inner orbit - This is the circles closest to the central point ---------- */
-.inner-orbit {
-  width: 400px;
-  height: 400px;
-  border: 1px solid rgba(255, 255, 255, 0.17);
-  border-radius: 100%;
+.orbit{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  border:2px #4A437F dashed;
+  border-radius:50%;
+}
 
-  & img {
-    position: absolute;
-    width: 300px;
-    height: 380px;
-    
-    object-fit: cover;
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
+.orbit1{ width:200px; height:200px; animation:spin-right 10s linear infinite;}
+.orbit2{ width:300px; height:300px; animation:spin-right 15s linear infinite;}
+.orbit3{ width:400px; height:400px; animation:spin-right 20s linear infinite;}
+.orbit4{ width:500px; height:500px; animation:spin-right 25s linear infinite;}
+
+.orbit1-cirlces,
+.orbit2-cirlces,
+.orbit3-cirlces,
+.orbit4-cirlces,
+.orbit5-cirlces,
+.orbit6-cirlces{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+}
+
+.orbit1-cirlces{
+  width:10px;
+  height:10px;
+  background:#9F98E6;
+
+  transform:translate(-50%,-50%) translateX(100px);
+}
+
+.orbit2-cirlces{
+  width:14px;
+  height:14px;
+  background:#6E67C9;
+
+  transform:translate(-50%,-50%) translateX(150px);
+}
+
+.orbit3-cirlces{
+  width:18px;
+  height:18px;
+  background:#00FFCA;
+
+  transform:translate(-50%,-50%) translateX(200px);
+}
+
+.orbit4-cirlces{
+  width:22px;
+  height:22px;
+  background:#FE69FE;
+
+  transform:translate(-50%,-50%) translateX(250px);
+}
+
+.orbit5-cirlces{
+  width:26px;
+  height:26px;
+  background:#1d0141;
+
+  transform:translate(-50%,-50%) translateX(300px);
+}
+
+.orbit6-cirlces{
+  width:30px;
+  height:30px;
+  background:#194401;
+
+  transform:translate(-50%,-50%) translateX(350px);
+}
+
+@keyframes spin-right{
+  from{
+    transform:translate(-50%,-50%) rotate(0deg);
   }
-}
-
-/* ---------- Middle orbit - This is the circles second closest to the central point ---------- */
-.middle-orbit {
-  position: relative;
-  top: 35px;
-  left: 35px;
-  width: 225px;
-  height: 225px;
-  border: 2px #4A437F dashed;
-  border-radius: 100%;
-  -webkit-animation: spin-right 15s linear infinite;
-  animation: spin-right 15s linear infinite;
-}
-
-/* ---------- Repeating styles for the inner orbiting circles ---------- */
-.middle-orbit-cirlces {
-  position: absolute;
-  top: 25px;
-  left: 17px;
-  height: 20px;
-  width: 20px;
-  border-radius: 100%;
-  background-color: #4A437F;
-}
-
-// /* ---------- Outer orbit - This is the circles furthest away from the central point ---------- */
-// .outer-orbit {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 294px;
-//   height: 294px;
-//   border: 2px #4A437F dashed;
-//   border-radius: 100%;
-//   -webkit-animation: spin-right 20s linear infinite;
-//   animation: spin-right 20s linear infinite;
-// }
-
-// /* ---------- Repeating styles for the outer orbiting circles ---------- */
-// .outer-orbit-cirlces {
-//   position: absolute;
-//   top: -17px;
-//   left: 125px;
-//   height: 30px;
-//   width: 30px;
-//   border-radius: 100%;
-//   background-color: #00FFCA;
-// }
-
-/* ---------- Animation ---------- */
-@-webkit-keyframes spin-right {
-  100% {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes spin-right {
-  100% {
-    transform: rotate(360deg);
+  to{
+    transform:translate(-50%,-50%) rotate(360deg);
   }
 }
