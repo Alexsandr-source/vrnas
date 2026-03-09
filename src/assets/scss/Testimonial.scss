@@ -26,20 +26,24 @@
 }
 
 .center-circle{
-  position:absolute;
-  top:50%;
-  left:50%;
+  display: flex;
+  justify-content: center;
   transform:translate(-50%,-50%);
 
   width:200px;
   height:200px;
   border-radius:50%;
-  overflow:hidden;
   background-color: rgba(255, 255, 255, 0.17);
-  background-image: url(../img/GoJo.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  & img {
+    position: relative;
+    top: -140px;
+    width: 450px;
+    height: 350px;
+    clip-path: ellipse(500px 358px at 80% 0%);
+  }
 }
 
 .orbit{
@@ -55,6 +59,8 @@
 .orbit2{ width:300px; height:300px; animation:spin-right 15s linear infinite;}
 .orbit3{ width:400px; height:400px; animation:spin-right 20s linear infinite;}
 .orbit4{ width:500px; height:500px; animation:spin-right 25s linear infinite;}
+.orbit5{ width:600px; height:600px; animation:spin-right 30s linear infinite;}
+.orbit6{ width:700px; height:700px; animation:spin-right 35s linear infinite;}
 
 .orbit1-cirlces,
 .orbit2-cirlces,
@@ -67,6 +73,7 @@
   left:50%;
   transform:translate(-50%,-50%);
   border-radius:50%;
+  z-index: 1;
 }
 
 .orbit1-cirlces{

@@ -9,7 +9,7 @@ function Testimonial() {
 
                 <h1>TESTIMONIAL</h1>
 
-                <div className="center-circle">
+                <div className="orbit center-circle">
                     <img src={man} alt="" />
                 </div>
 
