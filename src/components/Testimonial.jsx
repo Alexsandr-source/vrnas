@@ -1,4 +1,6 @@
-import man from "../assets/img/GoJo.png";
+import manTop from "../assets/img/Go.png";
+import manBottom from "../assets/img/Jo.png";
+import img1 from "../assets/img/testimonalImg1.png";
 import "../assets/scss/Testimonial.scss";
 
 function Testimonial() {
@@ -6,35 +8,46 @@ function Testimonial() {
     return (
         <div className="Testimonial">
             <div className="Testimonial-container">
-
-                <h1>TESTIMONIAL</h1>
-
-                <div className="orbit center-circle">
-                    <img src={man} alt="" />
+                <div className="Testimonial__header">
+                    <h1 className="Testimonial-title">TESTIMONIAL</h1>
+                    <h1 className="Testimonial-text">What Our Clients Are Saying</h1>
                 </div>
 
-                <div className="orbit orbit1">
-                    <div className="orbit1-cirlces"></div>
+                <div className="circle">
+                    <img className="circle-img" src={manTop} alt="" />
+                    <div className="circle-center">
+                        <img className="circle-center-img" src={manBottom} alt="" />
+                    </div>
                 </div>
 
                 <div className="orbit orbit2">
-                    <div className="orbit2-cirlces"></div>
+                    <div className="orbit2-cirlces">
+                        <img src={img1}/>
+                    </div>
                 </div>
 
                 <div className="orbit orbit3">
-                    <div className="orbit3-cirlces"></div>
+                    <div className="orbit3-cirlces">
+                        <img src={img1}/>
+                    </div>
                 </div>
 
                 <div className="orbit orbit4">
-                    <div className="orbit4-cirlces"></div>
+                    <div className="orbit4-cirlces">
+                        <img src={img1}/>
+                    </div>
                 </div>
 
                 <div className="orbit orbit5">
-                    <div className="orbit5-cirlces"></div>
+                    <div className="orbit5-cirlces">
+                        <img src={img1}/>
+                    </div>
                 </div>
 
                 <div className="orbit orbit6">
-                    <div className="orbit6-cirlces"></div>
+                    <div className="orbit6-cirlces">
+                        <img src={img1}/>
+                    </div>
                 </div>
 
             </div>

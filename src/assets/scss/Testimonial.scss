@@ -1,143 +1,173 @@
 .Testimonial {
-    display: flex;
-    justify-content: center;
-
-    &-container {
-        position: relative;
-        margin-top: 100px;
-        width:700px;
-        height:700px;
-
-        &::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 80%;
-            height: 80%;
-    
-            background: linear-gradient(0deg, #1CC4F9, #FE69FE);
-            border-radius: 16000px 0px 15000px 0px;
-    
-            filter: blur(130px);
-            z-index: -1;
-        }
-    }
-}
-
-.center-circle{
   display: flex;
   justify-content: center;
-  transform:translate(-50%,-50%);
 
-  width:200px;
-  height:200px;
-  border-radius:50%;
-  background-color: rgba(255, 255, 255, 0.17);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  & img {
+  &-container {
     position: relative;
-    object-fit: cover;
-    object-position: 0 0;
-    top: -140px;
-    width: 450px;
-    height: 350px;
-    transform: scaleX(-1);
-    mask-size: 25% 100%;
-    mask: radial-gradient(
-      30px at 50% 30px,
-      #000 99%,
-      #000
-    );
-    background-color: navy;
+    margin-top: 100px;
+    width:700px;
+    height:700px;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 80%;
+      height: 80%;
+      
+      background: linear-gradient(0deg, #1CC4F9, #FE69FE);
+      border-radius: 16000px 0px 15000px 0px;
+      
+      filter: blur(130px);
+      z-index: -1;
+    }
+  }
+
+  &__header {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-title {
+    display: inline-flex;
+    font-family: Chakra Petch;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 14%;
+    text-transform: uppercase;
+
+    background: linear-gradient(90deg, var(--blue-color), var(--purple10-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  &-text {
+    font-family: Chakra Petch;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 48px;
+    line-height: 58px;
+    letter-spacing: -0.5%;
+    text-align: center;
+    color: #FFFFFF;
+  }
+}
+
+.circle{
+  position: relative;
+  top:40%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+  &-img {
+    position: absolute;
+    bottom: 34px;
+    width: 340px;
+    height: 215px;
+    z-index: 2;
+  }
+  &-center{
+    display: flex;
+    justify-content: center;
+    width:200px;
+    height:200px;
+    border-radius:50%;
+    background-color: rgba(255, 255, 255, 0.17);
+    overflow: hidden;
+    &-img {
+      position: relative;
+      width: 360px;
+      height: 265px;
+      bottom: 45px;
+      transform: scaleX(-1);
+      z-index: 1;
+    }
   }
 }
 
 .orbit{
-  position:absolute;
-  top:50%;
+  position: absolute;
+  top:45%;
   left:50%;
   transform:translate(-50%,-50%);
-  border:2px #4A437F dashed;
+  border: 1px rgba(255, 255, 255, 0.17) solid;
   border-radius:50%;
 }
+.orbit2{width:300px; height:300px; animation:spin-right 15s linear infinite;}
+.orbit3{width:400px; height:400px; animation:spin-right 20s linear infinite;}
+.orbit4{width:500px; height:500px; animation:spin-right 25s linear infinite;}
+.orbit5{width:600px; height:600px; animation:spin-right 30s linear infinite;}
+.orbit6{width:700px; height:700px; animation:spin-right 35s linear infinite;}
 
-.orbit1{ width:200px; height:200px; animation:spin-right 10s linear infinite;}
-.orbit2{ width:300px; height:300px; animation:spin-right 15s linear infinite;}
-.orbit3{ width:400px; height:400px; animation:spin-right 20s linear infinite;}
-.orbit4{ width:500px; height:500px; animation:spin-right 25s linear infinite;}
-.orbit5{ width:600px; height:600px; animation:spin-right 30s linear infinite;}
-.orbit6{ width:700px; height:700px; animation:spin-right 35s linear infinite;}
-
-.orbit1-cirlces,
 .orbit2-cirlces,
 .orbit3-cirlces,
 .orbit4-cirlces,
 .orbit5-cirlces,
 .orbit6-cirlces{
-  position:absolute;
+  position:relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+  width: 55px;
+  height: 55px;
   top:50%;
   left:50%;
   transform:translate(-50%,-50%);
-  border-radius:50%;
-  z-index: 1;
-}
+  animation: spin-left linear infinite;
 
-.orbit1-cirlces{
-  width:10px;
-  height:10px;
-  background:#9F98E6;
-
-  transform:translate(-50%,-50%) translateX(100px);
+  border-radius: 50%;
+  border: 2px solid transparent;
+  background:
+    linear-gradient(#18181B, #18181B) padding-box,
+    linear-gradient(to right, rgba(255,255,255,0.3), rgba(255,255,255,0)) border-box;
+  background-color: rgba(37, 37, 50, 1);
+  & img {
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+  }
 }
 
 .orbit2-cirlces{
-  width:14px;
-  height:14px;
-  background:#6E67C9;
-
+  --radius: 150px;
   transform:translate(-50%,-50%) translateX(150px);
+  animation-duration: 15s; 
 }
-
 .orbit3-cirlces{
-  width:18px;
-  height:18px;
-  background:#00FFCA;
-
+  --radius: 200px;
   transform:translate(-50%,-50%) translateX(200px);
+  animation-duration: 20s; 
 }
-
 .orbit4-cirlces{
-  width:22px;
-  height:22px;
-  background:#FE69FE;
-
+  --radius: 250px;
   transform:translate(-50%,-50%) translateX(250px);
+  animation-duration: 25s; 
 }
-
 .orbit5-cirlces{
-  width:26px;
-  height:26px;
-  background:#1d0141;
-
+  --radius: 300px;
   transform:translate(-50%,-50%) translateX(300px);
+  animation-duration: 30s; 
 }
 
 .orbit6-cirlces{
-  width:30px;
-  height:30px;
-  background:#194401;
-
+  --radius: 350px;
   transform:translate(-50%,-50%) translateX(350px);
+  animation-duration: 35s; 
 }
 
-@keyframes spin-right{
-  from{
-    transform:translate(-50%,-50%) rotate(0deg);
+@keyframes spin-left {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg) translateX(var(--radius, 150px)) rotate(0deg);
   }
-  to{
-    transform:translate(-50%,-50%) rotate(360deg);
+  to {
+    transform: translate(-50%, -50%) rotate(-360deg) translateX(var(--radius, 150px)) rotate(360deg);
   }
 }
