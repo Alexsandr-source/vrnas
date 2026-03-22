@@ -1,6 +1,10 @@
 import manTop from "../assets/img/Go.png";
 import manBottom from "../assets/img/Jo.png";
 import img1 from "../assets/img/testimonalImg1.png";
+import img2 from "../assets/img/testimonalImg2.png";
+import img3 from "../assets/img/testimonalImg3.png";
+import img4 from "../assets/img/testimonalImg4.png";
+import img5 from "../assets/img/testimonalImg5.png";
 import "../assets/scss/Testimonial.scss";
 
 function Testimonial() {
@@ -28,25 +32,25 @@ function Testimonial() {
 
                 <div className="orbit orbit3">
                     <div className="orbit3-cirlces">
-                        <img src={img1}/>
+                        <img src={img2}/>
                     </div>
                 </div>
 
                 <div className="orbit orbit4">
                     <div className="orbit4-cirlces">
-                        <img src={img1}/>
+                        <img src={img3}/>
                     </div>
                 </div>
 
                 <div className="orbit orbit5">
                     <div className="orbit5-cirlces">
-                        <img src={img1}/>
+                        <img src={img4}/>
                     </div>
                 </div>
 
                 <div className="orbit orbit6">
                     <div className="orbit6-cirlces">
-                        <img src={img1}/>
+                        <img src={img5}/>
                     </div>
                 </div>
 
