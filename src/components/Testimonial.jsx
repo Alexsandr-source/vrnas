@@ -17,10 +17,10 @@ function Testimonial() {
                     <h1 className="Testimonial-text">What Our Clients Are Saying</h1>
                 </div>
 
-                <div className="circle">
-                    <img className="circle-img" src={manTop} alt="" />
-                    <div className="circle-center">
-                        <img className="circle-center-img" src={manBottom} alt="" />
+                <div className="center">
+                    <img className="center-img" src={manTop} alt="" />
+                    <div className="center-circle">
+                        <img className="center-circle-img" src={manBottom} alt="" />
                     </div>
                 </div>
 

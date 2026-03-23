@@ -1,7 +1,6 @@
 .Testimonial {
   display: flex;
   justify-content: center;
-
   &-container {
     position: relative;
     margin-top: 100px;
@@ -22,7 +21,6 @@
       z-index: -1;
     }
   }
-
   &__header {
     position: absolute;
     display: flex;
@@ -30,12 +28,10 @@
     justify-content: center;
     align-items: center;
   }
-
   &-title {
     display: inline-flex;
     font-family: Chakra Petch;
     font-weight: 500;
-    font-style: Medium;
     font-size: 16px;
     line-height: 100%;
     letter-spacing: 14%;
@@ -44,20 +40,21 @@
     background: linear-gradient(90deg, var(--blue-color), var(--purple10-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    z-index: 2;
   }
   &-text {
     font-family: Chakra Petch;
     font-weight: 600;
-    font-style: SemiBold;
     font-size: 48px;
     line-height: 58px;
     letter-spacing: -0.5%;
     text-align: center;
     color: #FFFFFF;
+    z-index: 2;
   }
 }
 
-.circle{
+.center{
   position: relative;
   top:40%;
   left:50%;
@@ -73,7 +70,7 @@
     height: 215px;
     z-index: 2;
   }
-  &-center{
+  &-circle{
     display: flex;
     justify-content: center;
     width:200px;
@@ -129,6 +126,11 @@
     linear-gradient(#18181B, #18181B) padding-box,
     linear-gradient(to right, rgba(255,255,255,0.3), rgba(255,255,255,0)) border-box;
   background-color: rgba(37, 37, 50, 1);
+  &:hover {
+    background:
+      linear-gradient(#18181B, #18181B) padding-box,
+      linear-gradient(to right, var(--blue-color), var(--purple10-color)) border-box;
+  }
   & img {
     width: 80%;
     height: 80%;
