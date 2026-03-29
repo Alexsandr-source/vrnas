@@ -23,9 +23,10 @@
   }
   &__header {
     position: absolute;
+    top: -2%;
+    left: 5%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
   }
   &-title {
@@ -43,6 +44,7 @@
     z-index: 2;
   }
   &-text {
+    margin-top: 20px;
     font-family: Chakra Petch;
     font-weight: 600;
     font-size: 48px;
@@ -56,7 +58,7 @@
 
 .center{
   position: relative;
-  top:40%;
+  top:45%;
   left:50%;
   transform:translate(-50%,-50%);
   position: relative;
@@ -66,23 +68,23 @@
   &-img {
     position: absolute;
     bottom: 34px;
-    width: 340px;
-    height: 215px;
+    width: 440px;
+    height: 275px;
     z-index: 2;
   }
   &-circle{
     display: flex;
     justify-content: center;
-    width:200px;
-    height:200px;
+    width:300px;
+    height:300px;
     border-radius:50%;
     background-color: rgba(255, 255, 255, 0.17);
     overflow: hidden;
     &-img {
       position: relative;
-      width: 360px;
-      height: 265px;
-      bottom: 45px;
+      width: 460px;
+      height: 339px;
+      bottom: 5px;
       transform: scaleX(-1);
       z-index: 1;
     }
@@ -97,17 +99,18 @@
   border: 1px rgba(255, 255, 255, 0.17) solid;
   border-radius:50%;
 }
-.orbit2{width:300px; height:300px; animation:spin-right 15s linear infinite;}
-.orbit3{width:400px; height:400px; animation:spin-right 20s linear infinite;}
-.orbit4{width:500px; height:500px; animation:spin-right 25s linear infinite;}
-.orbit5{width:600px; height:600px; animation:spin-right 30s linear infinite;}
-.orbit6{width:700px; height:700px; animation:spin-right 35s linear infinite;}
+.orbit2{width:400px; height:400px; animation:spin-right 15s linear infinite;}
+.orbit3{width:500px; height:500px; animation:spin-right 20s linear infinite;}
+.orbit4{width:600px; height:600px; animation:spin-right 25s linear infinite;}
+.orbit5{width:700px; height:700px; animation:spin-right 30s linear infinite;}
+.orbit6{width:800px; height:800px; animation:spin-right 35s linear infinite;}
 
 .orbit2-cirlces,
 .orbit3-cirlces,
 .orbit4-cirlces,
 .orbit5-cirlces,
-.orbit6-cirlces{
+.orbit6-cirlces,
+.orbit7-cirlces{
   position:relative;
   display: flex;
   justify-content: center;
@@ -117,15 +120,14 @@
   height: 55px;
   top:50%;
   left:50%;
-  transform:translate(-50%,-50%);
   animation: spin-left linear infinite;
+  z-index: 1;
 
   border-radius: 50%;
   border: 2px solid transparent;
   background:
     linear-gradient(#18181B, #18181B) padding-box,
     linear-gradient(to right, rgba(255,255,255,0.3), rgba(255,255,255,0)) border-box;
-  background-color: rgba(37, 37, 50, 1);
   &:hover {
     background:
       linear-gradient(#18181B, #18181B) padding-box,
@@ -139,30 +141,28 @@
 }
 
 .orbit2-cirlces{
-  --radius: 150px;
-  transform:translate(-50%,-50%) translateX(150px);
+  --radius: 200px;
   animation-duration: 15s; 
 }
 .orbit3-cirlces{
-  --radius: 200px;
-  transform:translate(-50%,-50%) translateX(200px);
+  --radius: 250px;
   animation-duration: 20s; 
 }
 .orbit4-cirlces{
-  --radius: 250px;
-  transform:translate(-50%,-50%) translateX(250px);
+  --radius: 300px;
   animation-duration: 25s; 
 }
 .orbit5-cirlces{
-  --radius: 300px;
-  transform:translate(-50%,-50%) translateX(300px);
+  --radius: 350px;
   animation-duration: 30s; 
 }
-
 .orbit6-cirlces{
-  --radius: 350px;
-  transform:translate(-50%,-50%) translateX(350px);
+  --radius: 400px;
   animation-duration: 35s; 
+}
+.orbit7-cirlces{
+  --radius: 400px;
+  animation-duration: 40s; 
 }
 
 @keyframes spin-left {

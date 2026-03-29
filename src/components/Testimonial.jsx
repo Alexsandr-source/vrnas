@@ -14,7 +14,7 @@ function Testimonial() {
             <div className="Testimonial-container">
                 <div className="Testimonial__header">
                     <h1 className="Testimonial-title">TESTIMONIAL</h1>
-                    <h1 className="Testimonial-text">What Our Clients Are Saying</h1>
+                    <h2 className="Testimonial-text">What Our Clients Are Saying</h2>
                 </div>
 
                 <div className="center">
@@ -50,6 +50,11 @@ function Testimonial() {
 
                 <div className="orbit orbit6">
                     <div className="orbit6-cirlces">
+                        <img src={img5}/>
+                    </div>
+                </div>
+                <div className="orbit orbit6">
+                    <div className="orbit7-cirlces">
                         <img src={img5}/>
                     </div>
                 </div>
