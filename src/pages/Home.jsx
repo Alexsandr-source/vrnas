@@ -11,6 +11,7 @@ import OurService from '../components/OurService';
 import ChooseUs from '../components/ChooseUs';
 import HowStarted from '../components/HowStarted';
 import Testimonial from '../components/Testimonial';
+import OurPricing from "../components/OurPricing";
 import VideoThumb from '../assets/img/thumbnail.png';
 import MyVideo from '../assets/video/video.mp4';
 import '../assets/scss/Home.scss'
@@ -67,6 +68,9 @@ function Home() {
         </section>
         <section>
           <Testimonial/>
+        </section>
+        <section>
+          <OurPricing/>
         </section>
       </main>
       <footer>
