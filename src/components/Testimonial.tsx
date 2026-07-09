@@ -8,6 +8,10 @@ import img5 from "../assets/img/testimonalImg5.png";
 import img6 from "../assets/img/testimonalImg6.png";
 import "../assets/scss/Testimonial.scss";
 
+function circleHover() {
+    
+}
+
 function Testimonial() {
 
     return (
@@ -26,7 +30,7 @@ function Testimonial() {
                 </div>
 
                 <div className="orbit orbit2">
-                    <div className="circles orbit2-circles">
+                    <div className="circles orbit2-circles" onMouseEnter={ () => circleHover()}>
                         <img src={img1}/>
                         <div className="circles__dropdown">
                             <p className="circles__dropdown-info">The team was professional, responsive, and a pleasure to work with. We highly recommend VRNas for any VR needs.</p>

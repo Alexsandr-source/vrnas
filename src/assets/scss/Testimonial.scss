@@ -92,15 +92,14 @@
 
 .circles{
   &__dropdown {
-    margin-left: 30px;
+    display: none;
     left: 80px;
     position: absolute;
     padding: 19px 18px;
     width: 246px;
     height: 86px;
-    background-color: #18181B;
-    border: 1px solid;
-    border-image: linear-gradient(to right, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0))1;
+    background: url("../img/svg.svg") no-repeat;
+    background-size: 100% 100%;
     &-info {
       font-family: Chakra Petch;
       font-weight: 400;
@@ -113,7 +112,7 @@
       color: #FFFFFF;
     }
     &-name {
-      margin-top: 12px;
+      margin-top: 8px;
       font-family: Chakra Petch;
       font-weight: 400;
       font-style: Regular;
@@ -122,23 +121,23 @@
       line-height: 24px;
       letter-spacing: 0%;
       color: #FFFFFF;
-    }
-    &::after{  
-      content:"";  
-      position:absolute;
-      top: -1px;  
-      left: -28px;
-      width: 25px;  
-      height: 122px;
-      background: #18181B;
-      border: 1px rgba(255, 255, 255, 0.3) solid;
-      clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 48%;
+        height: 2px;
+        left: 10;
+        bottom: 14px;
+        background: linear-gradient(90deg, var(--blue-color), var(--purple10-color));
+      }
     }
   }
   &:hover {
     background:
-      linear-gradient(#18181B, #18181B) padding-box,
-      linear-gradient(to right, var(--blue-color), var(--purple10-color)) border-box;
+    linear-gradient(#18181B, #18181B) padding-box,
+    linear-gradient(to right, var(--blue-color), var(--purple10-color)) border-box;
+    
   }
 }
 
