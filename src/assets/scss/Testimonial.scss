@@ -137,7 +137,9 @@
     background:
     linear-gradient(#18181B, #18181B) padding-box,
     linear-gradient(to right, var(--blue-color), var(--purple10-color)) border-box;
-    
+  }
+  &:hover &__dropdown {
+    display: block;
   }
 }
 
