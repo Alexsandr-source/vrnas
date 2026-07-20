@@ -13,16 +13,16 @@ function ChooseUs() {
     const [isFixed, setIsFixed] = useState(false);
     const [activeIndex, setActiveIndex] = useState(null);
 
-    const com = useRef(null),
-        videoHub = useRef(null),
-        video = useRef(null),
-        videoPlayer = useRef(null),
-        progressLine = useRef(null),
-        progressFill = useRef(null),
-        actionButton = useRef(null),
-        actionImage = useRef(null),
-        videoThumbnail = useRef(null),
-        closeButton = useRef(null);
+    const com: any = useRef(null),
+        videoHub: any = useRef(null),
+        video: any = useRef(null),
+        videoPlayer: any = useRef(null),
+        progressLine: any = useRef(null),
+        progressFill: any = useRef(null),
+        actionButton: any = useRef(null),
+        actionImage: any = useRef(null),
+        videoThumbnail: any = useRef(null),
+        closeButton: any = useRef(null);
     
     function videoStart() {
         setIsFixed(prev => !prev)
@@ -68,7 +68,7 @@ function ChooseUs() {
         const bar = progressLine.current;
         let isDragging = false;
 
-        const updateProgress = (e) => {
+        const updateProgress = (e: any) => {
             const rect = bar.getBoundingClientRect();
             const clickX = e.clientX - rect.left;
             const width = rect.width;
@@ -81,20 +81,20 @@ function ChooseUs() {
             videoPlayer.current.currentTime = percent * videoPlayer.current.duration;
         };
 
-        const handleMouseDown = (e) => {
+        const handleMouseDown = (e: any) => {
             isDragging = true;
             updateProgress(e);
             document.addEventListener("mousemove", handleMouseMove);
             document.addEventListener("mouseup", handleMouseUp);
         };
 
-        const handleMouseMove = (e) => {
+        const handleMouseMove = (e: any) => {
             if (isDragging) {
                 updateProgress(e);
             }
         };
 
-        const handleMouseUp = (e) => {
+        const handleMouseUp = (e: any) => {
             if (isDragging) {
                 updateProgress(e);
                 isDragging = false;
@@ -118,7 +118,7 @@ function ChooseUs() {
 
     useEffect(() => {
         let observer = new IntersectionObserver(
-            ([entry]) => {
+            ([entry]: any) => {
                 if (!entry.isIntersecting && !videoPlayer.current.paused) {
                     videoPlayer.current.pause();
                     updateButtonUI();
@@ -177,7 +177,7 @@ function ChooseUs() {
                         title: "Exceptional Customer Service",
                         text: "We are proud of our team of VR experts who are passionate about VR and dedicated to delivering the highest quality work. Our team consists of experienced VR developers, designers, and technicians who have a proven track record of creating immersive and engaging VR experiences."
                         }
-                    ].map((item, index) => (
+                    ].map((item, index: any) => (
                         <div className="ChooseUs__dropdown-item" key={index}>
                             <button
                                 className="ChooseUs__dropdown-link"

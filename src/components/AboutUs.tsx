@@ -13,16 +13,16 @@ import "../assets/scss/AboutUs.scss"
 
 function AboutUs() {
     const [isFixed, setIsFixed] = useState(false);
-	const com = useRef(null),
-		videoHub = useRef(null),
-		video = useRef(null),
-		videoPlayer = useRef(null),
-		progressLine = useRef(null),
-		progressFill = useRef(null),
-		actionButton = useRef(null),
-		actionImage = useRef(null),
-		videoThumbnail = useRef(null),
-		closeButton = useRef(null);
+	const com: any = useRef(null),
+		videoHub: any = useRef(null),
+		video: any = useRef(null),
+		videoPlayer: any = useRef(null),
+		progressLine: any = useRef(null),
+		progressFill: any = useRef(null),
+		actionButton: any = useRef(null),
+		actionImage: any = useRef(null),
+		videoThumbnail: any = useRef(null),
+		closeButton: any = useRef(null);
 
 	function videoStart() {
 		setIsFixed(prev => !prev)
@@ -68,7 +68,7 @@ function AboutUs() {
 		const bar = progressLine.current;
 		let isDragging = false;
 
-		const updateProgress = (e) => {
+		const updateProgress = (e: any) => {
 			const rect = bar.getBoundingClientRect();
 			const clickX = e.clientX - rect.left;
 			const width = rect.width;
@@ -81,20 +81,20 @@ function AboutUs() {
 			videoPlayer.current.currentTime = percent * videoPlayer.current.duration;
 		};
 
-		const handleMouseDown = (e) => {
+		const handleMouseDown = (e: any) => {
 			isDragging = true;
 			updateProgress(e);
 			document.addEventListener("mousemove", handleMouseMove);
 			document.addEventListener("mouseup", handleMouseUp);
 		};
 
-		const handleMouseMove = (e) => {
+		const handleMouseMove = (e: any) => {
 			if (isDragging) {
 				updateProgress(e);
 			}
 		};
 
-		const handleMouseUp = (e) => {
+		const handleMouseUp = (e: any) => {
 			if (isDragging) {
 				updateProgress(e);
 				isDragging = false;
@@ -117,7 +117,7 @@ function AboutUs() {
 	}, []);
 	useEffect(() => {
 		let observer = new IntersectionObserver(
-			([entry]) => {
+			([entry]: any) => {
 				if (!entry.isIntersecting && !videoPlayer.current.paused) {
 					videoPlayer.current.pause();
 					updateButtonUI();
@@ -156,7 +156,7 @@ function AboutUs() {
 
     return (
         <div className="AboutUs-container">
-            <div class="AboutUs-wrapper">
+            <div className="AboutUs-wrapper">
                 <img src={touchMan} alt="" />
                 <div className={`${isFixed ? "container" : "AboutUsVideo-container"}`}>
                     <img ref={closeButton} className={`${isFixed ? "AboutUsVideo-open" : "AboutUsVideo-close"} close`} onClick={videoClose} src={closeIcon} alt="close"/>
