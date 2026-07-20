@@ -5,18 +5,18 @@ import pauseIcon from "../assets/img/pause.svg";
 import closeIcon from "../assets/img/iconClose.png";
 import "../assets/scss/VideoPlayer.scss";
 
-const VideoPlayer = ({ src, thumbnail }) => {
+const VideoPlayer = ({ src, thumbnail }: any) => {
 	const [isFixed, setIsFixed] = useState(false);
-	const com = useRef(null),
-		videoHub = useRef(null),
-		video = useRef(null),
-		videoPlayer = useRef(null),
-		progressLine = useRef(null),
-		progressFill = useRef(null),
-		actionButton = useRef(null),
-		actionImage = useRef(null),
-		videoThumbnail = useRef(null),
-		closeButton = useRef(null);
+	const com: any = useRef(null),
+		videoHub: any = useRef(null),
+		video: any = useRef(null),
+		videoPlayer: any = useRef(null),
+		progressLine: any = useRef(null),
+		progressFill: any = useRef(null),
+		actionButton: any = useRef(null),
+		actionImage: any = useRef(null),
+		videoThumbnail: any = useRef(null),
+		closeButton: any = useRef(null);
 
 	function videoStart() {
 		setIsFixed(prev => !prev)
@@ -62,7 +62,7 @@ const VideoPlayer = ({ src, thumbnail }) => {
 		const bar = progressLine.current;
 		let isDragging = false;
 
-		const updateProgress = (e) => {
+		const updateProgress = (e: any) => {
 			const rect = bar.getBoundingClientRect();
 			const clickX = e.clientX - rect.left;
 			const width = rect.width;
@@ -75,20 +75,20 @@ const VideoPlayer = ({ src, thumbnail }) => {
 			videoPlayer.current.currentTime = percent * videoPlayer.current.duration;
 		};
 
-		const handleMouseDown = (e) => {
+		const handleMouseDown = (e: any) => {
 			isDragging = true;
 			updateProgress(e);
 			document.addEventListener("mousemove", handleMouseMove);
 			document.addEventListener("mouseup", handleMouseUp);
 		};
 
-		const handleMouseMove = (e) => {
+		const handleMouseMove = (e: any) => {
 			if (isDragging) {
 				updateProgress(e);
 			}
 		};
 
-		const handleMouseUp = (e) => {
+		const handleMouseUp = (e: any) => {
 			if (isDragging) {
 				updateProgress(e);
 				isDragging = false;
@@ -111,7 +111,7 @@ const VideoPlayer = ({ src, thumbnail }) => {
 	}, []);
 	useEffect(() => {
 		let observer = new IntersectionObserver(
-			([entry]) => {
+			([entry]: any) => {
 				if (!entry.isIntersecting && !videoPlayer.current.paused) {
 					videoPlayer.current.pause();
 					updateButtonUI();

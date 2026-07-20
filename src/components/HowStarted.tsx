@@ -3,20 +3,20 @@ import playFirst from "../assets/img/howStartedButton.png";
 import playIcon from "../assets/img/play.svg";
 import pauseIcon from "../assets/img/pause.svg";
 import thumbnail from '../assets/img/HowStartedImg.png';
-import src from '../assets/video/video.mp4';
+import src from "../assets/video/video.mp4";
 import "../assets/scss/HowStarted.scss"
 
 function HowStarted() {
 
-    const com = useRef(null),
-        video = useRef(null),
-        videoPlayer = useRef(null),
-        progressLine = useRef(null),
-        progressFill = useRef(null),
-        actionButton = useRef(null),
-        videoHub = useRef(null),
-        actionImage = useRef(null),
-        videoThumbnail = useRef(null);
+    const com: any = useRef(null),
+        video: any = useRef(null),
+        videoPlayer: any = useRef(null),
+        progressLine: any = useRef(null),
+        progressFill: any = useRef(null),
+        actionButton: any = useRef(null),
+        videoHub: any = useRef(null),
+        actionImage: any = useRef(null),
+        videoThumbnail: any = useRef(null);
     
     function videoStart() {
         com.current.style.display = "none";
@@ -49,7 +49,7 @@ function HowStarted() {
         const bar = progressLine.current;
         let isDragging = false;
 
-        const updateProgress = (e) => {
+        const updateProgress = (e: any) => {
             const rect = bar.getBoundingClientRect();
             const clickX = e.clientX - rect.left;
             const width = rect.width;
@@ -62,20 +62,20 @@ function HowStarted() {
             videoPlayer.current.currentTime = percent * videoPlayer.current.duration;
         };
 
-        const handleMouseDown = (e) => {
+        const handleMouseDown = (e: any) => {
             isDragging = true;
             updateProgress(e);
             document.addEventListener("mousemove", handleMouseMove);
             document.addEventListener("mouseup", handleMouseUp);
         };
 
-        const handleMouseMove = (e) => {
+        const handleMouseMove = (e: any) => {
             if (isDragging) {
                 updateProgress(e);
             }
         };
 
-        const handleMouseUp = (e) => {
+        const handleMouseUp = (e: any) => {
             if (isDragging) {
                 updateProgress(e);
                 isDragging = false;
@@ -98,7 +98,7 @@ function HowStarted() {
     }, []);
     useEffect(() => {
         let observer = new IntersectionObserver(
-            ([entry]) => {
+            ([entry]: any ) => {
                 if (!entry.isIntersecting && !videoPlayer.current.paused) {
                     videoPlayer.current.pause();
                     updateButtonUI();
